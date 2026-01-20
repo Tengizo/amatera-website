@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Speedoku</title>
+    <meta name="description" content="Privacy Policy for Speedoku, a competitive multiplayer Sudoku mobile game by Amatera LLC.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        :root {
+            --primary: #f5a623;
+            --primary-dark: #d4890f;
+            --bg-dark: #1a1a2e;
+            --bg-darker: #0f0f1a;
+            --text-light: #ffffff;
+            --text-muted: #a0a0b0;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        header {
+            padding: 24px 0;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        .logo-link { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+        .logo-small { height: 40px; width: auto; }
+        .logo-text { color: var(--text-light); font-weight: 600; font-size: 1.1rem; }
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav a:hover { color: var(--primary); }
+        main { padding: 120px 24px 80px; }
+        .policy-header { text-align: center; margin-bottom: 48px; }
+        .policy-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--text-light) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .policy-header .dates { color: var(--text-muted); font-size: 0.95rem; }
+        .policy-content h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 48px 0 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(245, 166, 35, 0.2);
+        }
+        .policy-content h3 {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin: 28px 0 12px;
+        }
+        .policy-content p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .policy-content ul, .policy-content ol {
+            color: var(--text-muted);
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        .policy-content li { margin-bottom: 8px; }
+        .policy-content strong { color: var(--text-light); }
+        .policy-content a { color: var(--primary); text-decoration: none; }
+        .policy-content a:hover { text-decoration: underline; }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+        .data-table th, .data-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .data-table th {
+            background: rgba(245, 166, 35, 0.1);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .data-table td { color: var(--text-muted); }
+        .summary-table {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 32px 0;
+        }
+        .summary-table th { background: rgba(245, 166, 35, 0.15); }
+        hr {
+            border: none;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 48px 0;
+        }
+        footer {
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        footer p { color: var(--text-muted); font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .policy-header h1 { font-size: 1.8rem; }
+            .policy-content h2 { font-size: 1.3rem; }
+            .data-table { font-size: 0.8rem; }
+            .data-table th, .data-table td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo-link">
+                <img src="/assets/logo.png" alt="Amatera" class="logo-small" onerror="this.style.display='none'">
+                <span class="logo-text">Amatera</span>
+            </a>
+            <nav>
+                <a href="/">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="policy-header">
+            <h1>Privacy Policy for Speedoku</h1>
+            <p class="dates"><strong>Last Updated:</strong> January 21, 2026<br><strong>Effective Date:</strong> January 21, 2026</p>
+        </div>
+
+        <div class="policy-content">
+            <h2>Introduction</h2>
+            <p>Welcome to Speedoku ("we," "our," or "us"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application Speedoku (the "App"), available on iOS and Android platforms.</p>
+            <p>Please read this Privacy Policy carefully. By using the App, you agree to the collection and use of information in accordance with this policy.</p>
+
+            <hr>
+
+            <h2>Information We Collect</h2>
+
+            <h3>Information You Provide</h3>
+            <p><strong>Account Information</strong></p>
+            <ul>
+                <li><strong>Anonymous Play:</strong> You can use Speedoku without creating an account. We generate an anonymous identifier to save your progress.</li>
+                <li><strong>Social Sign-In:</strong> If you choose to sign in with Google or Apple, we receive your name, email address, and profile photo from these services.</li>
+                <li><strong>Profile Information:</strong> Display name and username you choose to set in the App.</li>
+            </ul>
+
+            <p><strong>Social Features</strong></p>
+            <ul>
+                <li>Friend requests and connections you initiate</li>
+                <li>Game invitations you send to other players</li>
+                <li>Your public leaderboard entries (username and scores)</li>
+            </ul>
+
+            <h3>Information Collected Automatically</h3>
+            <p><strong>Gameplay Data</strong></p>
+            <ul>
+                <li>Puzzle statistics: games played, completed, and abandoned</li>
+                <li>Performance metrics: scores, completion times, mistakes, hints used</li>
+                <li>Achievement progress and unlocks</li>
+                <li>Daily challenge participation and streaks</li>
+                <li>Multiplayer match history and results</li>
+            </ul>
+
+            <p><strong>Technical Information</strong></p>
+            <ul>
+                <li>Device type and operating system version</li>
+                <li>App version</li>
+                <li>Crash reports and error logs</li>
+                <li>Online/offline status for multiplayer features</li>
+                <li>General usage analytics</li>
+            </ul>
+
+            <h3>Information Stored Locally</h3>
+            <p>The App stores the following data on your device:</p>
+            <ul>
+                <li>Saved games and puzzle progress</li>
+                <li>Game settings and preferences</li>
+                <li>Cached account information for quick sign-in</li>
+                <li>Offline statistics (synced to cloud when online)</li>
+            </ul>
+
+            <hr>
+
+            <h2>How We Use Your Information</h2>
+            <p>We use collected information to:</p>
+            <ul>
+                <li><strong>Provide Core Features:</strong> Save your game progress, track statistics, and enable multiplayer functionality</li>
+                <li><strong>Enable Social Features:</strong> Connect you with friends, display leaderboards, and facilitate game invitations</li>
+                <li><strong>Improve the App:</strong> Analyze usage patterns, fix bugs, and enhance user experience</li>
+                <li><strong>Sync Data:</strong> Back up your progress to the cloud so you can access it across devices</li>
+                <li><strong>Maintain Security:</strong> Detect and prevent fraud, abuse, or unauthorized access</li>
+            </ul>
+
+            <hr>
+
+            <h2>Data Sharing and Disclosure</h2>
+
+            <h3>Third-Party Service Providers</h3>
+            <p>We use the following third-party services:</p>
+
+            <div class="summary-table">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Purpose</th>
+                            <th>Data Shared</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Firebase Authentication</strong></td>
+                            <td>User sign-in</td>
+                            <td>Account credentials</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Firebase Firestore</strong></td>
+                            <td>Cloud data storage</td>
+                            <td>Profile, stats, social data</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Firebase Realtime Database</strong></td>
+                            <td>Multiplayer sync</td>
+                            <td>Game room data, presence</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Firebase Analytics</strong></td>
+                            <td>Usage analytics</td>
+                            <td>Anonymous usage events</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Firebase Crashlytics</strong></td>
+                            <td>Crash reporting</td>
+                            <td>Error logs, device info</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Sign-In</strong></td>
+                            <td>Authentication</td>
+                            <td>Name, email, photo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Apple Sign-In</strong></td>
+                            <td>Authentication</td>
+                            <td>Name, email</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>These services are operated by Google LLC and Apple Inc. and are subject to their respective privacy policies.</p>
+
+            <h3>Public Information</h3>
+            <p>The following information may be visible to other users:</p>
+            <ul>
+                <li>Your display name and username</li>
+                <li>Your profile photo (if set)</li>
+                <li>Your online/offline status (to friends only)</li>
+                <li>Your leaderboard rankings and scores</li>
+            </ul>
+
+            <h3>Legal Requirements</h3>
+            <p>We may disclose information if required by law, court order, or governmental request, or to protect our rights, safety, or property.</p>
+
+            <hr>
+
+            <h2>Data Storage and Security</h2>
+
+            <h3>Where We Store Data</h3>
+            <ul>
+                <li><strong>Cloud Data:</strong> Stored on Google Cloud Platform (Firebase) servers</li>
+                <li><strong>Local Data:</strong> Stored on your device using encrypted SQLite database</li>
+            </ul>
+
+            <h3>Security Measures</h3>
+            <p>We implement appropriate technical and organizational measures to protect your data, including:</p>
+            <ul>
+                <li>Encrypted data transmission (HTTPS/TLS)</li>
+                <li>Firebase App Check to verify authentic app requests</li>
+                <li>Firebase Security Rules to restrict data access</li>
+                <li>Anonymous identifiers for non-authenticated users</li>
+            </ul>
+
+            <hr>
+
+            <h2>Data Retention</h2>
+            <ul>
+                <li><strong>Account Data:</strong> Retained as long as your account is active</li>
+                <li><strong>Gameplay Statistics:</strong> Retained indefinitely to maintain your progress</li>
+                <li><strong>Multiplayer Room Data:</strong> Deleted after match completion (typically within 24 hours)</li>
+                <li><strong>Crash Reports:</strong> Retained for 90 days for debugging purposes</li>
+            </ul>
+
+            <h3>Account Deletion</h3>
+            <p>You may request deletion of your account and associated data by contacting us at <a href="mailto:contact@amatera.dev">contact@amatera.dev</a>. Upon deletion:</p>
+            <ul>
+                <li>Your profile and cloud-stored data will be permanently removed</li>
+                <li>Leaderboard entries will be anonymized</li>
+                <li>Local data must be deleted by uninstalling the App</li>
+            </ul>
+
+            <hr>
+
+            <h2>Your Rights and Choices</h2>
+
+            <h3>Your Rights</h3>
+            <p>Depending on your location, you may have the right to:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of your personal data</li>
+                <li><strong>Correction:</strong> Update inaccurate information</li>
+                <li><strong>Deletion:</strong> Request deletion of your data</li>
+                <li><strong>Portability:</strong> Receive your data in a portable format</li>
+                <li><strong>Opt-Out:</strong> Disable optional data collection</li>
+            </ul>
+
+            <h3>How to Exercise Your Rights</h3>
+            <ul>
+                <li><strong>Profile Data:</strong> Edit directly in App Settings</li>
+                <li><strong>Account Deletion:</strong> Contact <a href="mailto:contact@amatera.dev">contact@amatera.dev</a></li>
+                <li><strong>Data Export:</strong> Contact <a href="mailto:contact@amatera.dev">contact@amatera.dev</a></li>
+            </ul>
+
+            <h3>Managing Permissions</h3>
+            <p>You can control certain data collection:</p>
+            <ul>
+                <li><strong>Anonymous Play:</strong> Use the App without signing in</li>
+                <li><strong>Social Features:</strong> Optional—don't add friends to avoid social data collection</li>
+                <li><strong>Leaderboards:</strong> Don't submit scores to avoid public display</li>
+            </ul>
+
+            <hr>
+
+            <h2>Children's Privacy</h2>
+            <p>Speedoku is designed to be suitable for players of all ages. We do not knowingly collect personal information from children under 13 (or applicable age in your jurisdiction) beyond what is necessary to provide the game functionality.</p>
+            <p><strong>For Parents and Guardians:</strong></p>
+            <ul>
+                <li>Children can play anonymously without providing personal information</li>
+                <li>Social features (friends, invitations) require profile setup</li>
+                <li>No advertising or in-app purchases collect additional data</li>
+            </ul>
+            <p>If you believe we have collected information from a child inappropriately, please contact us at <a href="mailto:contact@amatera.dev">contact@amatera.dev</a>.</p>
+
+            <hr>
+
+            <h2>International Data Transfers</h2>
+            <p>Your information may be transferred to and processed in countries other than your own, including the United States where Google Cloud servers are located. We ensure appropriate safeguards are in place for such transfers.</p>
+
+            <hr>
+
+            <h2>California Privacy Rights (CCPA)</h2>
+            <p>California residents have additional rights:</p>
+            <ul>
+                <li><strong>Right to Know:</strong> What personal information we collect and how it's used</li>
+                <li><strong>Right to Delete:</strong> Request deletion of personal information</li>
+                <li><strong>Right to Opt-Out:</strong> We do not sell personal information</li>
+                <li><strong>Non-Discrimination:</strong> We won't discriminate against you for exercising rights</li>
+            </ul>
+
+            <hr>
+
+            <h2>European Privacy Rights (GDPR)</h2>
+            <p>If you are in the European Economic Area, you have rights under GDPR including:</p>
+            <ul>
+                <li>Access, rectification, and erasure of data</li>
+                <li>Data portability</li>
+                <li>Objection to processing</li>
+                <li>Withdrawal of consent</li>
+                <li>Filing complaints with supervisory authorities</li>
+            </ul>
+            <p><strong>Legal Basis for Processing:</strong></p>
+            <ul>
+                <li><strong>Contract:</strong> To provide the App and its features</li>
+                <li><strong>Legitimate Interest:</strong> To improve and secure the App</li>
+                <li><strong>Consent:</strong> For optional features like social sign-in</li>
+            </ul>
+
+            <hr>
+
+            <h2>Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+            <ul>
+                <li>Posting the new Privacy Policy in the App</li>
+                <li>Updating the "Last Updated" date</li>
+            </ul>
+            <p>Your continued use of the App after changes constitutes acceptance of the updated policy.</p>
+
+            <hr>
+
+            <h2>Contact Us</h2>
+            <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
+            <p><strong>Email:</strong> <a href="mailto:contact@amatera.dev">contact@amatera.dev</a><br>
+            <strong>Website:</strong> <a href="https://amatera.dev">https://amatera.dev</a></p>
+
+            <hr>
+
+            <h2>Summary Table</h2>
+            <div class="summary-table">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>What We Collect</th>
+                            <th>Why</th>
+                            <th>Your Control</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Anonymous ID</td>
+                            <td>Save progress without account</td>
+                            <td>Automatic</td>
+                        </tr>
+                        <tr>
+                            <td>Social login data</td>
+                            <td>Account creation</td>
+                            <td>Optional</td>
+                        </tr>
+                        <tr>
+                            <td>Profile (name, photo)</td>
+                            <td>Display to other players</td>
+                            <td>You provide</td>
+                        </tr>
+                        <tr>
+                            <td>Game statistics</td>
+                            <td>Track your progress</td>
+                            <td>Automatic</td>
+                        </tr>
+                        <tr>
+                            <td>Friends & invitations</td>
+                            <td>Social features</td>
+                            <td>You initiate</td>
+                        </tr>
+                        <tr>
+                            <td>Leaderboard scores</td>
+                            <td>Rankings</td>
+                            <td>Optional</td>
+                        </tr>
+                        <tr>
+                            <td>Crash reports</td>
+                            <td>Fix bugs</td>
+                            <td>Automatic</td>
+                        </tr>
+                        <tr>
+                            <td>Analytics</td>
+                            <td>Improve app</td>
+                            <td>Automatic</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Amatera LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
