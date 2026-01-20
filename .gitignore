@@ -1,0 +1,14 @@
+# IDE files
+.idea/
+
+# Claude Code
+.claude/
+
+# Playwright screenshots
+.playwright-mcp/
+
+# Firebase
+firebase-debug.log
+
+# macOS
+.DS_Store
