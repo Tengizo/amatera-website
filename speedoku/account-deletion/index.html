@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion - Speedoku</title>
+    <meta name="description" content="Request deletion of your Speedoku account and associated data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        :root {
+            --primary: #f5a623;
+            --primary-dark: #d4890f;
+            --bg-dark: #1a1a2e;
+            --bg-darker: #0f0f1a;
+            --text-light: #ffffff;
+            --text-muted: #a0a0b0;
+            --error: #e74c3c;
+            --success: #27ae60;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        header {
+            padding: 24px 0;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        .logo-link { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+        .logo-small { height: 40px; width: auto; }
+        .logo-text { color: var(--text-light); font-weight: 600; font-size: 1.1rem; }
+        nav { display: flex; gap: 24px; }
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav a:hover { color: var(--primary); }
+        main { padding: 120px 24px 80px; }
+        .page-header { text-align: center; margin-bottom: 48px; }
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--text-light) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-header p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .content-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .content-section h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        .content-section p {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .content-section ul {
+            color: var(--text-muted);
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        .content-section li { margin-bottom: 8px; }
+        .content-section strong { color: var(--text-light); }
+        .content-section a { color: var(--primary); text-decoration: none; }
+        .content-section a:hover { text-decoration: underline; }
+        .form-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .form-section h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-group label {
+            display: block;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .form-group .hint {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+        .form-group input[type="email"],
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .form-group input::placeholder {
+            color: var(--text-muted);
+        }
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a0a0b0' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+        .form-group select option {
+            background: var(--bg-dark);
+            color: var(--text-light);
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+        .checkbox-group label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+        .submit-btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--bg-darker);
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 166, 35, 0.3);
+        }
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        .warning-box {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        .warning-box p {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        footer {
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        footer p { color: var(--text-muted); font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 1.8rem; }
+            .content-section, .form-section { padding: 24px; }
+            nav { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo-link">
+                <img src="/assets/logo.png" alt="Amatera" class="logo-small" onerror="this.style.display='none'">
+                <span class="logo-text">Amatera</span>
+            </a>
+            <nav>
+                <a href="/speedoku/privacy-policy/">Privacy Policy</a>
+                <a href="/">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Account Deletion Request</h1>
+            <p>Request the deletion of your Speedoku account and all associated data.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>What Happens When You Delete Your Account</h2>
+            <p>When you request account deletion, we will permanently remove:</p>
+            <ul>
+                <li><strong>Your profile information</strong> - display name, username, and profile photo</li>
+                <li><strong>Your game statistics</strong> - scores, completion times, achievements, and streaks</li>
+                <li><strong>Your social data</strong> - friends list, game invitations, and multiplayer history</li>
+                <li><strong>Your cloud-synced data</strong> - all data stored on our servers</li>
+            </ul>
+            <p><strong>Note:</strong> Leaderboard entries will be anonymized. Local data on your device must be deleted by uninstalling the app.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Processing Time</h2>
+            <p>Account deletion requests are typically processed within <strong>7 business days</strong>. You will receive a confirmation email once your data has been deleted.</p>
+        </div>
+
+        <div class="form-section">
+            <h2>Deletion Request Form</h2>
+
+            <div class="warning-box">
+                <p><strong>Warning:</strong> Account deletion is permanent and cannot be undone. All your game progress, statistics, and achievements will be lost forever.</p>
+            </div>
+
+            <form action="https://formsubmit.co/contact@amatera.dev" method="POST">
+                <!-- FormSubmit configuration -->
+                <input type="hidden" name="_subject" value="Speedoku Account Deletion Request">
+                <input type="hidden" name="_next" value="https://amatera.dev/speedoku/account-deletion/?success=true">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter the email associated with your account">
+                    <span class="hint">This should be the email you used to sign in to Speedoku (Google or Apple sign-in email).</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="user_id">App User ID (Optional)</label>
+                    <input type="text" id="user_id" name="user_id" placeholder="e.g., abc123xyz">
+                    <span class="hint">You can find this in the app under Settings > Account. This helps us locate your account faster.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Reason for Deletion (Optional)</label>
+                    <select id="reason" name="reason">
+                        <option value="">Select a reason...</option>
+                        <option value="no_longer_using">I no longer use the app</option>
+                        <option value="privacy_concerns">Privacy concerns</option>
+                        <option value="too_many_accounts">Managing too many accounts</option>
+                        <option value="not_satisfied">Not satisfied with the app</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <span class="hint">This helps us improve Speedoku for other users.</span>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="confirm" name="confirm" required value="yes">
+                        <label for="confirm">I understand that account deletion is permanent and all my game data, statistics, achievements, and progress will be permanently deleted and cannot be recovered.</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Deletion Request</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Amatera LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Show success message if redirected after form submission
+        if (window.location.search.includes('success=true')) {
+            const formSection = document.querySelector('.form-section');
+            formSection.innerHTML = `
+                <h2>Request Submitted Successfully</h2>
+                <p style="color: var(--text-muted); margin-bottom: 16px;">Thank you for submitting your account deletion request.</p>
+                <p style="color: var(--text-muted); margin-bottom: 16px;">We have received your request and will process it within <strong style="color: var(--text-light);">7 business days</strong>. You will receive a confirmation email at the address you provided once your data has been deleted.</p>
+                <p style="color: var(--text-muted);">If you have any questions, please contact us at <a href="mailto:contact@amatera.dev" style="color: var(--primary);">contact@amatera.dev</a>.</p>
+            `;
+        }
+    </script>
+</body>
+</html>
