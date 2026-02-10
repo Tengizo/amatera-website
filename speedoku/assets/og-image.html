@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            width: 1200px;
+            height: 630px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0D0515 0%, #1A0A2E 50%, #1E1145 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .floating-digits {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .digit {
+            position: absolute;
+            font-size: 200px;
+            font-weight: 800;
+            color: rgba(139, 92, 246, 0.05);
+        }
+
+        .digit:nth-child(1) { top: -50px; left: 50px; }
+        .digit:nth-child(2) { top: 100px; right: 100px; }
+        .digit:nth-child(3) { bottom: -30px; left: 200px; }
+        .digit:nth-child(4) { bottom: 50px; right: 250px; }
+
+        .content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            z-index: 1;
+        }
+
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 180px;
+            height: 180px;
+            border-radius: 40px;
+            box-shadow: 0 0 80px rgba(139, 92, 246, 0.3);
+            margin-bottom: 24px;
+        }
+
+        .text-section {
+            max-width: 650px;
+        }
+
+        .title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -2px;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .title span {
+            background: linear-gradient(135deg, #8B5CF6, #D580FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 32px;
+            color: #B4A5C7;
+            font-weight: 400;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-size: 20px;
+            color: #A78BFA;
+            margin-top: 32px;
+        }
+
+        .badge-dot {
+            width: 10px;
+            height: 10px;
+            background: #10B981;
+            border-radius: 50%;
+        }
+
+        .grid-decoration {
+            position: absolute;
+            right: -100px;
+            bottom: -100px;
+            width: 400px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 8px;
+            opacity: 0.15;
+            transform: rotate(15deg);
+        }
+
+        .grid-cell {
+            background: rgba(139, 92, 246, 0.5);
+            border-radius: 12px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-digits">
+        <span class="digit">9</span>
+        <span class="digit">4</span>
+        <span class="digit">7</span>
+        <span class="digit">2</span>
+    </div>
+
+    <div class="content">
+        <div class="logo-section">
+            <img src="./icon.png" alt="Speedoku" class="logo-icon">
+        </div>
+        <div class="text-section">
+            <h1 class="title">Speed<span>oku</span></h1>
+            <p class="tagline">Competitive Multiplayer Sudoku</p>
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Race against friends in real-time
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-decoration">
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+    </div>
+</body>
+</html>
