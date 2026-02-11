@@ -1,0 +1,393 @@
+Data Collection Summary                            
+  Category: Authentication                           
+  Data: Anonymous, Google Sign-In, Apple Sign-In     
+  ────────────────────────────────────────           
+  Category: Profile                                  
+  Data: Display name, username, photo URL, email (if 
+    social login)                                    
+  ────────────────────────────────────────           
+  Category: Game Data                                
+  Data: Stats, scores, completion times,             
+  achievements,                                      
+     daily challenges                                
+  ────────────────────────────────────────           
+  Category: Social                                   
+  Data: Friends list, friend requests, game          
+    invitations                                      
+  ────────────────────────────────────────           
+  Category: Multiplayer                              
+  Data: Room data, match history, leaderboard entries
+  ────────────────────────────────────────           
+  Category: Technical                                
+  Data: Crash reports (Crashlytics), analytics,      
+  online                                             
+     presence                                        
+  ────────────────────────────────────────           
+  Category: Local Storage                            
+  Data: Settings, saved games, cached accounts       
+  ---                                                
+  Prompt for AI Generation                           
+                                                     
+  Create a Privacy Policy for Speedoku, a competitive
+   multiplayer Sudoku mobile game                    
+  available on iOS and Android. The app uses Firebase
+   (Google) services and collects:                   
+                                                     
+  Authentication: Anonymous accounts, Google Sign-In,
+   Apple Sign-In                                     
+  User Data: Display names, usernames, profile       
+  photos, email (from social login only)             
+  Game Data: Puzzle stats, scores, times, mistakes,  
+  hints used, achievements, streaks                  
+  Social Features: Friends lists, friend requests,   
+  game invitations, online status                    
+  Multiplayer: Real-time game rooms, match results,  
+  leaderboard rankings                               
+  Analytics: Firebase Analytics (default events),    
+  Firebase Crashlytics for errors                    
+  Storage: Local SQLite database for offline play,   
+  cloud sync to Firebase                             
+                                                     
+  The app is suitable for all ages (no age-gating).  
+  Users can play anonymously or                      
+  link social accounts. Data is stored on Google     
+  Cloud (Firebase). Include sections                 
+  on GDPR/CCPA compliance, children's privacy, data  
+  retention, and user rights.                        
+                                                     
+  ---                                                
+  Privacy Policy Content                             
+                                                     
+  # Privacy Policy for Speedoku                      
+                                                     
+  **Last Updated: [DATE]**                           
+  **Effective Date: [DATE]**                         
+                                                     
+  ## Introduction                                    
+                                                     
+  Welcome to Speedoku ("we," "our," or "us"). This   
+  Privacy Policy explains how we collect,            
+  use, disclose, and safeguard your information when 
+  you use our mobile application                     
+  Speedoku (the "App"), available on iOS and Android 
+  platforms.                                         
+                                                     
+  Please read this Privacy Policy carefully. By using
+   the App, you agree to the collection              
+  and use of information in accordance with this     
+  policy.                                            
+                                                     
+  ---                                                
+                                                     
+  ## Information We Collect                          
+                                                     
+  ### Information You Provide                        
+                                                     
+  **Account Information**                            
+  - **Anonymous Play**: You can use Speedoku without 
+  creating an account. We generate an                
+    anonymous identifier to save your progress.      
+  - **Social Sign-In**: If you choose to sign in with
+   Google or Apple, we receive your                  
+    name, email address, and profile photo from these
+   services.                                         
+  - **Profile Information**: Display name and        
+  username you choose to set in the App.             
+                                                     
+  **Social Features**                                
+  - Friend requests and connections you initiate     
+  - Game invitations you send to other players       
+  - Your public leaderboard entries (username and    
+  scores)                                            
+                                                     
+  ### Information Collected Automatically            
+                                                     
+  **Gameplay Data**                                  
+  - Puzzle statistics: games played, completed, and  
+  abandoned                                          
+  - Performance metrics: scores, completion times,   
+  mistakes, hints used                               
+  - Achievement progress and unlocks                 
+  - Daily challenge participation and streaks        
+  - Multiplayer match history and results            
+                                                     
+  **Technical Information**                          
+  - Device type and operating system version         
+  - App version                                      
+  - Crash reports and error logs                     
+  - Online/offline status for multiplayer features   
+  - General usage analytics                          
+                                                     
+  ### Information Stored Locally                     
+                                                     
+  The App stores the following data on your device:  
+  - Saved games and puzzle progress                  
+  - Game settings and preferences                    
+  - Cached account information for quick sign-in     
+  - Offline statistics (synced to cloud when online) 
+                                                     
+  ---                                                
+                                                     
+  ## How We Use Your Information                     
+                                                     
+  We use collected information to:                   
+                                                     
+  - **Provide Core Features**: Save your game        
+  progress, track statistics, and enable             
+    multiplayer functionality                        
+  - **Enable Social Features**: Connect you with     
+  friends, display leaderboards, and                 
+    facilitate game invitations                      
+  - **Improve the App**: Analyze usage patterns, fix 
+  bugs, and enhance user experience                  
+  - **Sync Data**: Back up your progress to the cloud
+   so you can access it across devices               
+  - **Maintain Security**: Detect and prevent fraud, 
+  abuse, or unauthorized access                      
+                                                     
+  ---                                                
+                                                     
+  ## Data Sharing and Disclosure                     
+                                                     
+  ### Third-Party Service Providers                  
+                                                     
+  We use the following third-party services:         
+                                                     
+  | Service | Purpose | Data Shared |                
+  |---------|---------|-------------|                
+  | **Firebase Authentication** | User sign-in |     
+  Account credentials |                              
+  | **Firebase Firestore** | Cloud data storage |    
+  Profile, stats, social data |                      
+  | **Firebase Realtime Database** | Multiplayer sync
+   | Game room data, presence |                      
+  | **Firebase Analytics** | Usage analytics |       
+  Anonymous usage events |                           
+  | **Firebase Crashlytics** | Crash reporting |     
+  Error logs, device info |                          
+  | **Google Sign-In** | Authentication | Name,      
+  email, photo |                                     
+  | **Apple Sign-In** | Authentication | Name, email 
+  |                                                  
+                                                     
+  These services are operated by Google LLC and Apple
+   Inc. and are subject to their                     
+  respective privacy policies.                       
+                                                     
+  ### Public Information                             
+                                                     
+  The following information may be visible to other  
+  users:                                             
+  - Your display name and username                   
+  - Your profile photo (if set)                      
+  - Your online/offline status (to friends only)     
+  - Your leaderboard rankings and scores             
+                                                     
+  ### Legal Requirements                             
+                                                     
+  We may disclose information if required by law,    
+  court order, or governmental request,              
+  or to protect our rights, safety, or property.     
+                                                     
+  ---                                                
+                                                     
+  ## Data Storage and Security                       
+                                                     
+  ### Where We Store Data                            
+                                                     
+  - **Cloud Data**: Stored on Google Cloud Platform  
+  (Firebase) servers                                 
+  - **Local Data**: Stored on your device using      
+  encrypted SQLite database                          
+                                                     
+  ### Security Measures                              
+                                                     
+  We implement appropriate technical and             
+  organizational measures to protect your data,      
+  including:                                         
+  - Encrypted data transmission (HTTPS/TLS)          
+  - Firebase App Check to verify authentic app       
+  requests                                           
+  - Firebase Security Rules to restrict data access  
+  - Anonymous identifiers for non-authenticated users
+                                                     
+  ---                                                
+                                                     
+  ## Data Retention                                  
+                                                     
+  - **Account Data**: Retained as long as your       
+  account is active                                  
+  - **Gameplay Statistics**: Retained indefinitely to
+   maintain your progress                            
+  - **Multiplayer Room Data**: Deleted after match   
+  completion (typically within 24 hours)             
+  - **Crash Reports**: Retained for 90 days for      
+  debugging purposes                                 
+                                                     
+  ### Account Deletion                               
+                                                     
+  You may request deletion of your account and       
+  associated data by contacting us at                
+  [EMAIL]. Upon deletion:                            
+  - Your profile and cloud-stored data will be       
+  permanently removed                                
+  - Leaderboard entries will be anonymized           
+  - Local data must be deleted by uninstalling the   
+  App                                                
+                                                     
+  ---                                                
+                                                     
+  ## Your Rights and Choices                         
+                                                     
+  ### Your Rights                                    
+                                                     
+  Depending on your location, you may have the right 
+  to:                                                
+  - **Access**: Request a copy of your personal data 
+  - **Correction**: Update inaccurate information    
+  - **Deletion**: Request deletion of your data      
+  - **Portability**: Receive your data in a portable 
+  format                                             
+  - **Opt-Out**: Disable optional data collection    
+                                                     
+  ### How to Exercise Your Rights                    
+                                                     
+  - **Profile Data**: Edit directly in App Settings  
+  - **Account Deletion**: Contact [EMAIL]            
+  - **Data Export**: Contact [EMAIL]                 
+                                                     
+  ### Managing Permissions                           
+                                                     
+  You can control certain data collection:           
+  - **Anonymous Play**: Use the App without signing  
+  in                                                 
+  - **Social Features**: Optional—don't add friends  
+  to avoid social data collection                    
+  - **Leaderboards**: Don't submit scores to avoid   
+  public display                                     
+                                                     
+  ---                                                
+                                                     
+  ## Children's Privacy                              
+                                                     
+  Speedoku is designed to be suitable for players of 
+  all ages. We do not knowingly                      
+  collect personal information from children under 13
+   (or applicable age in your                        
+  jurisdiction) beyond what is necessary to provide  
+  the game functionality.                            
+                                                     
+  **For Parents and Guardians**:                     
+  - Children can play anonymously without providing  
+  personal information                               
+  - Social features (friends, invitations) require   
+  profile setup                                      
+  - No advertising or in-app purchases collect       
+  additional data                                    
+                                                     
+  If you believe we have collected information from a
+   child inappropriately, please                     
+  contact us at [EMAIL].                             
+                                                     
+  ---                                                
+                                                     
+  ## International Data Transfers                    
+                                                     
+  Your information may be transferred to and         
+  processed in countries other than your             
+  own, including the United States where Google Cloud
+   servers are located. We ensure                    
+  appropriate safeguards are in place for such       
+  transfers.                                         
+                                                     
+  ---                                                
+                                                     
+  ## California Privacy Rights (CCPA)                
+                                                     
+  California residents have additional rights:       
+  - **Right to Know**: What personal information we  
+  collect and how it's used                          
+  - **Right to Delete**: Request deletion of personal
+   information                                       
+  - **Right to Opt-Out**: We do not sell personal    
+  information                                        
+  - **Non-Discrimination**: We won't discriminate    
+  against you for exercising rights                  
+                                                     
+  ---                                                
+                                                     
+  ## European Privacy Rights (GDPR)                  
+                                                     
+  If you are in the European Economic Area, you have 
+  rights under GDPR including:                       
+  - Access, rectification, and erasure of data       
+  - Data portability                                 
+  - Objection to processing                          
+  - Withdrawal of consent                            
+  - Filing complaints with supervisory authorities   
+                                                     
+  **Legal Basis for Processing**:                    
+  - **Contract**: To provide the App and its features
+  - **Legitimate Interest**: To improve and secure   
+  the App                                            
+  - **Consent**: For optional features like social   
+  sign-in                                            
+                                                     
+  ---                                                
+                                                     
+  ## Changes to This Privacy Policy                  
+                                                     
+  We may update this Privacy Policy from time to     
+  time. We will notify you of any                    
+  changes by:                                        
+  - Posting the new Privacy Policy in the App        
+  - Updating the "Last Updated" date                 
+                                                     
+  Your continued use of the App after changes        
+  constitutes acceptance of the updated policy.      
+                                                     
+  ---                                                
+                                                     
+  ## Contact Us                                      
+                                                     
+  If you have questions or concerns about this       
+  Privacy Policy or our data practices,              
+  please contact us:                                 
+                                                     
+  **Email**: [YOUR EMAIL]                            
+  **Website**: [YOUR WEBSITE]                        
+                                                     
+  ---                                                
+                                                     
+  ## Summary Table                                   
+                                                     
+  | What We Collect | Why | Your Control |           
+  |-----------------|-----|--------------|           
+  | Anonymous ID | Save progress without account |   
+  Automatic |                                        
+  | Social login data | Account creation | Optional |
+  | Profile (name, photo) | Display to other players 
+  | You provide |                                    
+  | Game statistics | Track your progress | Automatic
+   |                                                 
+  | Friends & invitations | Social features | You    
+  initiate |                                         
+  | Leaderboard scores | Rankings | Optional |       
+  | Crash reports | Fix bugs | Automatic |           
+  | Analytics | Improve app | Automatic |            
+                                                     
+  ---                                                
+  Recommended Additions                              
+                                                     
+  Before publishing, you should:                     
+                                                     
+  1. Add your contact email - Replace [EMAIL]        
+  placeholders                                       
+  2. Add your website URL - For privacy inquiries    
+  3. Set effective date - When policy goes live      
+  4. App Store links - Link to iOS/Android stores    
+  5. Consider a DPO - Data Protection Officer contact
+   for GDPR                                          
+  6. Cookie policy - If you have a web version       
+  7. Legal review - Have a lawyer review before      
+  publishing  
