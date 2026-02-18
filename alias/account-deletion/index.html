@@ -110,6 +110,18 @@
             padding: 140px 24px 80px;
         }
 
+        .page-header-icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .page-header-icon img {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+        }
+
         .page-title {
             font-size: clamp(2rem, 5vw, 2.5rem);
             font-weight: 700;
@@ -466,7 +478,10 @@
 
     <main>
         <div class="container">
-            <h1 class="page-title">Delete Account</h1>
+            <div class="page-header-icon">
+                <img src="/alias/assets/app_icon.png" alt="Alias App Icon">
+            </div>
+            <h1 class="page-title">Delete Your Alias Account</h1>
             <p class="page-subtitle">Request deletion of your account and associated data.</p>
 
             <div class="warning-box">
@@ -474,11 +489,11 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
                     </svg>
-                    This action is permanent
+                    Deleting your Alias account is permanent
                 </h3>
-                <p>Deleting your account will permanently remove:</p>
+                <p>This will permanently remove:</p>
                 <ul>
-                    <li>Your player profile and statistics</li>
+                    <li>Your Alias player profile and statistics</li>
                     <li>Game history and achievements</li>
                     <li>Downloaded word packs linked to your account</li>
                     <li>All other data associated with your account</li>
