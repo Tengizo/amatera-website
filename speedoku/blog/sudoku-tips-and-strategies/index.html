@@ -848,21 +848,21 @@
 
                 <p>Pencil marks &mdash; the small candidate numbers you write in empty cells &mdash; are one of the most important sudoku techniques at every level. However, writing pencil marks in every cell can actually slow you down. Instead, use them selectively: focus on cells or regions where the logic is tricky.</p>
 
-                <p>In the example below, look at Box 5 (the center 3&times;3 box). Some cells have pencil marks showing their candidates, while the filled cells around them provide context. The cell at R5C5 has candidates {1, 9} &mdash; only two possibilities, worth noting. Meanwhile R4C4 can be resolved by scanning (it is the only empty spot in its column that can hold 7), so no pencil marks needed there.</p>
+                <p>In the example below, the grid is mid-solve. Some empty cells have pencil marks (small candidate numbers) while others are left blank. Notice how pencil marks are only used where the logic is tricky &mdash; like R5C5 with candidates {1, 9} and R4C5 with candidates {2, 5}. Meanwhile, cells like R1C3 or R3C5 have no pencil marks because they can be resolved by quick scanning. This selective approach keeps the grid clean and your mind focused.</p>
 
                 <div class="sudoku-example">
                 <table class="sudoku-grid">
-                    <tr><td class="g">5</td><td class="g">3</td><td class="g">4</td><td class="g">6</td><td class="g">7</td><td class="g">8</td><td class="g">9</td><td class="g">1</td><td class="g">2</td></tr>
-                    <tr><td class="g">6</td><td class="g">7</td><td class="g">2</td><td class="g">1</td><td class="g">9</td><td class="g">5</td><td class="g">3</td><td class="g">4</td><td class="g">8</td></tr>
-                    <tr><td class="g">1</td><td class="g">9</td><td class="g">8</td><td class="g">3</td><td class="g">4</td><td class="g">2</td><td class="g">5</td><td class="g">6</td><td class="g">7</td></tr>
-                    <tr><td class="g">8</td><td class="g">5</td><td class="g">9</td><td class="g h">7</td><td class="g">6</td><td class="g">1</td><td class="g">4</td><td class="g">2</td><td class="g">3</td></tr>
-                    <tr><td class="g">4</td><td class="g">2</td><td class="g">6</td><td class="g">8</td><td class="pm h"><div class="pm-grid"><span class="ph">1</span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="ph">9</span></div></td><td class="g">3</td><td class="g">7</td><td class="g">9</td><td class="g">1</td></tr>
-                    <tr><td class="g">7</td><td class="g">1</td><td class="g">3</td><td class="g">9</td><td class="g">2</td><td class="g">4</td><td class="g">8</td><td class="g">5</td><td class="g">6</td></tr>
-                    <tr><td class="g">9</td><td class="g">6</td><td class="g">1</td><td class="g">5</td><td class="g">3</td><td class="g">7</td><td class="g">2</td><td class="g">8</td><td class="g">4</td></tr>
-                    <tr><td class="g">2</td><td class="g">8</td><td class="g">7</td><td class="g">4</td><td class="g">1</td><td class="g">9</td><td class="g">6</td><td class="g">3</td><td class="g">5</td></tr>
+                    <tr><td class="g">5</td><td class="g">3</td><td></td><td class="g">6</td><td class="g">7</td><td class="g">8</td><td class="g">9</td><td class="g">1</td><td class="g">2</td></tr>
+                    <tr><td class="g">6</td><td></td><td class="g">2</td><td class="g">1</td><td class="g">9</td><td class="g">5</td><td class="g">3</td><td></td><td class="g">8</td></tr>
+                    <tr><td></td><td class="g">9</td><td class="g">8</td><td class="g">3</td><td></td><td class="g">2</td><td></td><td class="g">6</td><td class="g">7</td></tr>
+                    <tr><td class="g">8</td><td></td><td class="g">9</td><td class="g">7</td><td class="pm h"><div class="pm-grid"><span></span><span class="ph">2</span><span></span><span></span><span class="ph">5</span><span></span><span></span><span></span><span></span></div></td><td class="g">1</td><td class="g">4</td><td></td><td class="g">3</td></tr>
+                    <tr><td class="g">4</td><td class="g">2</td><td></td><td class="g">8</td><td class="pm h"><div class="pm-grid"><span class="ph">1</span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="ph">9</span></div></td><td class="g">3</td><td class="g">7</td><td class="g">9</td><td></td></tr>
+                    <tr><td class="g">7</td><td class="g">1</td><td class="g">3</td><td class="g">9</td><td class="pm h"><div class="pm-grid"><span></span><span class="ph">2</span><span></span><span></span><span></span><span></span><span></span><span class="ph">8</span><span></span></div></td><td class="g">4</td><td></td><td class="g">5</td><td class="g">6</td></tr>
+                    <tr><td class="g">9</td><td class="g">6</td><td></td><td class="g">5</td><td class="g">3</td><td class="g">7</td><td class="g">2</td><td class="g">8</td><td class="g">4</td></tr>
+                    <tr><td class="g">2</td><td class="g">8</td><td></td><td class="g">4</td><td class="g">1</td><td class="g">9</td><td class="g">6</td><td class="g">3</td><td class="g">5</td></tr>
                     <tr><td class="g">3</td><td class="g">4</td><td class="g">5</td><td class="g">2</td><td class="g">8</td><td class="g">6</td><td class="g">1</td><td class="g">7</td><td class="g">9</td></tr>
                 </table>
-                <p class="grid-caption">R5C5 shows pencil marks {1, 9}. Use pencil marks selectively for tricky cells, not every empty cell.</p>
+                <p class="grid-caption">Mid-solve grid: pencil marks (highlighted) are used only in tricky cells in Column 5. Other empty cells can be solved by scanning &mdash; no pencil marks needed.</p>
                 </div>
 
                 <p>As a rule of thumb: if a cell has three or fewer candidates and you cannot resolve it immediately, note them down. If you can resolve it by quick scanning, skip the notation and move on. This keeps your grid clean and your pace fast.</p>
