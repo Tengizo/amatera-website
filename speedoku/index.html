@@ -283,53 +283,6 @@
             line-height: 1.7;
         }
 
-        .hero-ctas {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 28px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dim) 100%);
-            color: white;
-            box-shadow: var(--glow-primary);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 80px rgba(139, 92, 246, 0.5);
-        }
-
-        .btn-secondary {
-            background: rgba(139, 92, 246, 0.1);
-            color: var(--primary-glow);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(139, 92, 246, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .btn svg {
-            width: 20px;
-            height: 20px;
-        }
-
         /* Phone Mockup */
         .hero-visual {
             display: flex;
@@ -979,27 +932,28 @@
         }
 
         .store-btn {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 14px;
-            padding: 14px 28px;
-            background: var(--gradient-card);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 14px;
+            gap: 12px;
+            padding: 10px 24px 10px 18px;
+            background: #000000;
+            border: 1.5px solid #a6a6a6;
+            border-radius: 12px;
             text-decoration: none;
-            color: var(--text-primary);
+            color: #ffffff;
             transition: all 0.3s;
         }
 
         .store-btn:hover {
-            border-color: var(--primary);
+            background: #1a1a1a;
             transform: translateY(-2px);
-            box-shadow: var(--glow-primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
 
         .store-btn svg {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
         }
 
         .store-btn-text {
@@ -1008,13 +962,17 @@
 
         .store-btn-text span {
             display: block;
-            font-size: 12px;
-            color: var(--text-muted);
+            font-size: 11px;
+            color: #cccccc;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
         }
 
         .store-btn-text strong {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
         }
 
         /* Footer */
@@ -1072,10 +1030,6 @@
 
             .hero h1 {
                 font-size: 48px;
-            }
-
-            .hero-ctas {
-                justify-content: center;
             }
 
             .hero-visual {
@@ -1202,10 +1156,27 @@
                 <div class="hero-badge">Now Available on iOS & Android</div>
                 <h1>Multiplayer Sudoku, <span class="highlight">Reinvented</span> for Competition</h1>
                 <p class="hero-description">The best multiplayer sudoku app for playing sudoku with friends. Race in real-time battles, tackle daily challenges across 6 difficulty levels, and climb global leaderboards.</p>
-                <div class="hero-ctas">
-                    <a href="#download" class="btn btn-primary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Download Now
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/us/app/speedoku-multiplayer-sudoku/id6758058137" target="_blank" rel="noopener noreferrer" class="store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        <div class="store-btn-text">
+                            <span>Download on the</span>
+                            <strong>App Store</strong>
+                        </div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.speedoku.speedoku" target="_blank" rel="noopener noreferrer" class="store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92z"/>
+                            <path d="M14.5 12.707l2.55 2.55-8.6 4.87 6.05-7.42z" fill="#34A853"/>
+                            <path d="M19.05 10.57l-2.01 1.14-2.54-2.71 2.54-2.71 2.01 1.14c.87.49.87 1.71 0 2.14z" fill="#FBBC04"/>
+                            <path d="M8.45 4.873l8.6 4.87-2.55 2.55-6.05-7.42z" fill="#EA4335"/>
+                        </svg>
+                        <div class="store-btn-text">
+                            <span>GET IT ON</span>
+                            <strong>Google Play</strong>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -1547,11 +1518,13 @@
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.speedoku.speedoku" target="_blank" rel="noopener noreferrer" class="store-btn">
                     <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5h11c.83 0 1.5.67 1.5 1.5v17c0 .83-.67 1.5-1.5 1.5h-11c-.83 0-1.5-.67-1.5-1.5zm10.5-1.5c0-.55-.45-1-1-1s-1 .45-1 1 .45 1 1 1 1-.45 1-1z"/>
-                        <path d="M3.5 2L16 12 3.5 22"/>
+                        <path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92z"/>
+                        <path d="M14.5 12.707l2.55 2.55-8.6 4.87 6.05-7.42z" fill="#34A853"/>
+                        <path d="M19.05 10.57l-2.01 1.14-2.54-2.71 2.54-2.71 2.01 1.14c.87.49.87 1.71 0 2.14z" fill="#FBBC04"/>
+                        <path d="M8.45 4.873l8.6 4.87-2.55 2.55-6.05-7.42z" fill="#EA4335"/>
                     </svg>
                     <div class="store-btn-text">
-                        <span>Get it on</span>
+                        <span>GET IT ON</span>
                         <strong>Google Play</strong>
                     </div>
                 </a>
