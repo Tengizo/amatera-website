@@ -334,6 +334,117 @@
             padding-top: 6px;
         }
 
+        /* Sudoku Grid Examples */
+        .sudoku-example {
+            margin: 32px 0;
+        }
+
+        .sudoku-grid {
+            border-collapse: collapse;
+            margin: 0 auto;
+            border: 2.5px solid var(--primary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .sudoku-grid td {
+            width: 44px;
+            height: 44px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: rgba(13, 5, 21, 0.6);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            position: relative;
+        }
+
+        .sudoku-grid td:nth-child(3),
+        .sudoku-grid td:nth-child(6) {
+            border-right: 2.5px solid rgba(139, 92, 246, 0.5);
+        }
+
+        .sudoku-grid tr:nth-child(3) td,
+        .sudoku-grid tr:nth-child(6) td {
+            border-bottom: 2.5px solid rgba(139, 92, 246, 0.5);
+        }
+
+        .sudoku-grid td.g {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .sudoku-grid td.h {
+            background: rgba(139, 92, 246, 0.15);
+        }
+
+        .sudoku-grid td.s {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success) !important;
+            font-weight: 700;
+        }
+
+        .sudoku-grid td.el {
+            background: rgba(239, 68, 68, 0.08);
+        }
+
+        .sudoku-grid td.pm {
+            padding: 2px;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            line-height: 1;
+        }
+
+        .pm-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            width: 100%;
+            height: 100%;
+        }
+
+        .pm-grid span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pm-grid span.x {
+            color: #ef4444;
+            text-decoration: line-through;
+        }
+
+        .pm-grid span.ph {
+            color: var(--primary-glow);
+            font-weight: 700;
+        }
+
+        .pm-grid span.sh {
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .grid-caption {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 640px) {
+            .sudoku-grid td {
+                width: 34px;
+                height: 34px;
+                font-size: 14px;
+            }
+            .sudoku-grid td.pm {
+                font-size: 8px;
+            }
+        }
+
         /* CTA Box */
         .cta-box {
             background: var(--gradient-card);
@@ -685,7 +796,7 @@
                         <circle cx="12" cy="12" r="10"/>
                         <polyline points="12 6 12 12 16 14"/>
                     </svg>
-                    7 min read
+                    12 min read
                 </span>
             </div>
         </div>
@@ -698,7 +809,7 @@
 
                 <p>Whether you are a casual solver or you compete head-to-head in real-time matches on <a href="../../">Speedoku</a>, knowing the right sudoku tips can shave minutes off your solve time. In competitive multiplayer sudoku, every second counts. A single hesitation while your opponent locks in the correct digit can be the difference between victory and defeat. That is why mastering proven sudoku strategies is not just helpful &mdash; it is essential.</p>
 
-                <p>The good news is that you do not need to be a genius to solve sudoku faster. Speed comes from pattern recognition, systematic habits, and a handful of sudoku techniques that you can start practicing today. In this guide, we break down ten actionable tips ranging from sudoku for beginners basics all the way to advanced tactics used by top-level solvers. By the time you finish reading, you will have a concrete toolkit to solve sudoku faster in any setting, from daily newspaper grids to high-pressure multiplayer showdowns.</p>
+                <p>The good news is that you do not need to be a genius to solve sudoku faster. Speed comes from pattern recognition, systematic habits, and a handful of sudoku techniques that you can start practicing today. In this guide, we break down ten actionable tips &mdash; each with detailed examples on real sudoku grids &mdash; ranging from sudoku for beginners basics all the way to advanced tactics used by top-level solvers.</p>
 
                 <h2>Beginner Sudoku Tips</h2>
 
@@ -709,28 +820,87 @@
                     <span class="tip-title">Start with Scanning</span>
                 </h3>
 
-                <p>The fastest way to open any puzzle is to scan the grid for rows, columns, and boxes that already have many filled cells. When a unit has only one or two empty spots, the remaining digits are heavily constrained, and you can often fill them instantly without any pencil marks. Begin each puzzle by sweeping your eyes across the grid from top to bottom and left to right, picking off the easiest cells first. This initial scan builds momentum and reduces the number of unknowns you have to juggle later. In competitive sudoku, a strong opening scan can put you several cells ahead before your opponent even settles in.</p>
+                <p>The fastest way to open any puzzle is to scan the grid for rows, columns, and boxes that already have many filled cells. When a unit has only one or two empty spots, the remaining digits are heavily constrained, and you can often fill them instantly without any pencil marks.</p>
+
+                <p>Look at Row 1 in the example below. Eight of its nine cells are already filled with 5, 3, 6, 7, 8, 9, 1, and 2. The only digit from 1&ndash;9 that is missing is <strong>4</strong>, so R1C3 must be 4. No calculation needed &mdash; just count what is there and what is not.</p>
+
+                <div class="sudoku-example">
+                <table class="sudoku-grid">
+                    <tr><td class="g h">5</td><td class="g h">3</td><td class="s">4</td><td class="g h">6</td><td class="g h">7</td><td class="g h">8</td><td class="g h">9</td><td class="g h">1</td><td class="g h">2</td></tr>
+                    <tr><td class="g">6</td><td></td><td class="g">2</td><td class="g">1</td><td class="g">9</td><td class="g">5</td><td class="g">3</td><td></td><td class="g">8</td></tr>
+                    <tr><td></td><td class="g">9</td><td class="g">8</td><td class="g">3</td><td></td><td class="g">2</td><td></td><td class="g">6</td><td class="g">7</td></tr>
+                    <tr><td class="g">8</td><td></td><td></td><td></td><td class="g">6</td><td class="g">1</td><td class="g">4</td><td class="g">2</td><td></td></tr>
+                    <tr><td class="g">4</td><td class="g">2</td><td></td><td class="g">8</td><td class="g">5</td><td></td><td class="g">7</td><td class="g">9</td><td class="g">1</td></tr>
+                    <tr><td class="g">7</td><td class="g">1</td><td class="g">3</td><td class="g">9</td><td class="g">2</td><td class="g">4</td><td></td><td></td><td class="g">6</td></tr>
+                    <tr><td class="g">9</td><td></td><td class="g">1</td><td class="g">5</td><td class="g">3</td><td></td><td class="g">2</td><td class="g">8</td><td class="g">4</td></tr>
+                    <tr><td class="g">2</td><td class="g">8</td><td></td><td></td><td class="g">1</td><td class="g">9</td><td class="g">6</td><td class="g">3</td><td class="g">5</td></tr>
+                    <tr><td class="g">3</td><td class="g">4</td><td class="g">5</td><td class="g">2</td><td class="g">8</td><td class="g">6</td><td class="g">1</td><td class="g">7</td><td class="g">9</td></tr>
+                </table>
+                <p class="grid-caption">Row 1 (highlighted) has 8 of 9 digits filled. The missing digit is 4 (green).</p>
+                </div>
+
+                <p>Begin each puzzle by sweeping your eyes across the grid, picking off cells like this where the answer is obvious. In competitive sudoku, a strong opening scan can put you several cells ahead before your opponent even settles in.</p>
 
                 <h3>
                     <span class="tip-number">2</span>
                     <span class="tip-title">Use Pencil Marks Wisely</span>
                 </h3>
 
-                <p>Pencil marks &mdash; the small candidate numbers you write in empty cells &mdash; are one of the most important sudoku techniques at every level. However, writing pencil marks in every cell can actually slow you down. Instead, use them selectively. Focus your annotations on cells or regions where the logic is tricky and you need a visual reminder. In easier sections, rely on mental elimination. As a rule of thumb, if a cell has three or fewer candidates, note them down; if you can resolve it by quick scanning, skip the notation and move on. This keeps your grid clean, your mind clear, and your pace fast.</p>
+                <p>Pencil marks &mdash; the small candidate numbers you write in empty cells &mdash; are one of the most important sudoku techniques at every level. However, writing pencil marks in every cell can actually slow you down. Instead, use them selectively: focus on cells or regions where the logic is tricky.</p>
+
+                <p>In the example below, look at Box 5 (the center 3&times;3 box). Some cells have pencil marks showing their candidates, while the filled cells around them provide context. The cell at R5C5 has candidates {1, 9} &mdash; only two possibilities, worth noting. Meanwhile R4C4 can be resolved by scanning (it is the only empty spot in its column that can hold 7), so no pencil marks needed there.</p>
+
+                <div class="sudoku-example">
+                <table class="sudoku-grid">
+                    <tr><td class="g">5</td><td class="g">3</td><td class="g">4</td><td class="g">6</td><td class="g">7</td><td class="g">8</td><td class="g">9</td><td class="g">1</td><td class="g">2</td></tr>
+                    <tr><td class="g">6</td><td class="g">7</td><td class="g">2</td><td class="g">1</td><td class="g">9</td><td class="g">5</td><td class="g">3</td><td class="g">4</td><td class="g">8</td></tr>
+                    <tr><td class="g">1</td><td class="g">9</td><td class="g">8</td><td class="g">3</td><td class="g">4</td><td class="g">2</td><td class="g">5</td><td class="g">6</td><td class="g">7</td></tr>
+                    <tr><td class="g">8</td><td class="g">5</td><td class="g">9</td><td class="g h">7</td><td class="g">6</td><td class="g">1</td><td class="g">4</td><td class="g">2</td><td class="g">3</td></tr>
+                    <tr><td class="g">4</td><td class="g">2</td><td class="g">6</td><td class="g">8</td><td class="pm h"><div class="pm-grid"><span class="ph">1</span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="ph">9</span></div></td><td class="g">3</td><td class="g">7</td><td class="g">9</td><td class="g">1</td></tr>
+                    <tr><td class="g">7</td><td class="g">1</td><td class="g">3</td><td class="g">9</td><td class="g">2</td><td class="g">4</td><td class="g">8</td><td class="g">5</td><td class="g">6</td></tr>
+                    <tr><td class="g">9</td><td class="g">6</td><td class="g">1</td><td class="g">5</td><td class="g">3</td><td class="g">7</td><td class="g">2</td><td class="g">8</td><td class="g">4</td></tr>
+                    <tr><td class="g">2</td><td class="g">8</td><td class="g">7</td><td class="g">4</td><td class="g">1</td><td class="g">9</td><td class="g">6</td><td class="g">3</td><td class="g">5</td></tr>
+                    <tr><td class="g">3</td><td class="g">4</td><td class="g">5</td><td class="g">2</td><td class="g">8</td><td class="g">6</td><td class="g">1</td><td class="g">7</td><td class="g">9</td></tr>
+                </table>
+                <p class="grid-caption">R5C5 shows pencil marks {1, 9}. Use pencil marks selectively for tricky cells, not every empty cell.</p>
+                </div>
+
+                <p>As a rule of thumb: if a cell has three or fewer candidates and you cannot resolve it immediately, note them down. If you can resolve it by quick scanning, skip the notation and move on. This keeps your grid clean and your pace fast.</p>
 
                 <h3>
                     <span class="tip-number">3</span>
                     <span class="tip-title">Focus on One Number at a Time</span>
                 </h3>
 
-                <p>Rather than hopping between different digits at random, try picking a single number and scanning the entire grid for every place it can go. For example, choose the number 7 and look at each row, column, and box. Where is 7 already placed? Where is it missing? By concentrating on one value, your brain can hold a simpler mental model and spot placements faster. Once you have exhausted the possibilities for that digit, move to the next. This is one of the most reliable sudoku strategies for beginners because it converts a complex puzzle into a series of smaller, more manageable searches.</p>
+                <p>Rather than hopping between different digits at random, pick a single number and scan the entire grid for every place it can go. In the example below, we are tracking the digit <strong>9</strong>. All existing 9s are highlighted in purple.</p>
+
+                <div class="sudoku-example">
+                <table class="sudoku-grid">
+                    <tr><td></td><td></td><td class="g">4</td><td></td><td class="g h">9</td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td class="g h">9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td class="g h">9</td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td class="g h">9</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td class="g h">9</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="g h">9</td></tr>
+                    <tr><td></td><td class="g h">9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td class="g h">9</td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="s">9</td><td></td></tr>
+                </table>
+                <p class="grid-caption">Tracking the digit 9 across the grid. All placed 9s are highlighted. Box 9 (bottom-right) has only one possible cell left: R9C8 (green).</p>
+                </div>
+
+                <p>Now look at Box 9 (bottom-right 3&times;3). It has no 9 yet. Row 7 already has a 9 (R7C2), so 9 cannot go in R7C7, R7C8, or R7C9. Row 8 also has a 9 (R8C6), eliminating those cells too. That leaves Row 9 within Box 9. Column 7 has a 9 (R3C7) and Column 9 has a 9 (R6C9), which eliminates R9C7 and R9C9. The only remaining cell is <strong>R9C8 = 9</strong>.</p>
+
+                <p>By concentrating on one value at a time, your brain holds a simpler mental model and spots placements faster. This is one of the most reliable sudoku strategies for beginners because it converts a complex puzzle into a series of smaller, manageable searches.</p>
 
                 <h3>
                     <span class="tip-number">4</span>
                     <span class="tip-title">Work the Rows, Columns, and Boxes Systematically</span>
                 </h3>
 
-                <p>Jumping randomly around the grid is a common mistake that wastes time and leads to missed opportunities. Instead, develop a systematic approach: sweep through each row from top to bottom, then each column from left to right, then each 3x3 box in order. This habit ensures you never accidentally overlook an easy placement. A structured workflow also helps you remember which areas you have already checked, so you avoid redundant scanning. Over time, this discipline becomes second nature, and you will find yourself solving puzzles significantly faster without any extra effort. Systematic thinking is one of the simplest yet most effective sudoku tips you can adopt.</p>
+                <p>Jumping randomly around the grid is a common mistake that wastes time and leads to missed opportunities. Instead, develop a systematic approach: sweep through each row from top to bottom, then each column from left to right, then each 3&times;3 box in order. This habit ensures you never accidentally overlook an easy placement.</p>
+
+                <p>A structured workflow also helps you remember which areas you have already checked, so you avoid redundant scanning. Over time, this discipline becomes second nature, and you will find yourself solving puzzles significantly faster without any extra effort. Systematic thinking is one of the simplest yet most effective sudoku tips you can adopt.</p>
 
                 <h2>Advanced Sudoku Strategies</h2>
 
@@ -741,28 +911,104 @@
                     <span class="tip-title">Naked Pairs and Triples</span>
                 </h3>
 
-                <p>A naked pair occurs when two cells within the same row, column, or box share the exact same two candidates and no others. Because those two digits must occupy those two cells, you can safely eliminate both candidates from every other cell in that unit. The same logic extends to naked triples, where three cells share a combined set of three candidates. Spotting these patterns lets you prune your pencil marks aggressively, often unlocking a chain of easy placements. This is one of the sudoku techniques that separates intermediate solvers from true speed demons, and it is well worth the practice to recognize at a glance.</p>
+                <p>A naked pair occurs when two cells within the same row, column, or box share the exact same two candidates and no others. Because those two digits <em>must</em> occupy those two cells, you can safely eliminate both candidates from every other cell in that unit.</p>
+
+                <p>Look at Row 4 in the example below. The row contains 3, 1, 6, 5, and 9, leaving three empty cells that need digits 2, 7, and 8. After applying column and box constraints, R4C3 has candidates {7, 8} and R4C5 also has candidates {7, 8} &mdash; a naked pair. Since 7 and 8 must go in those two cells, the remaining cell R4C7 can only be <strong>2</strong>.</p>
+
+                <div class="sudoku-example">
+                <table class="sudoku-grid">
+                    <tr><td class="g">5</td><td class="g">3</td><td class="g">4</td><td class="g">6</td><td class="g">7</td><td class="g">8</td><td class="g">9</td><td class="g">1</td><td class="g">2</td></tr>
+                    <tr><td class="g">6</td><td class="g">7</td><td class="g">2</td><td class="g">1</td><td class="g">9</td><td class="g">5</td><td class="g">3</td><td class="g">4</td><td class="g">8</td></tr>
+                    <tr><td class="g">1</td><td class="g">9</td><td class="g">8</td><td class="g">3</td><td class="g">4</td><td class="g">2</td><td class="g">5</td><td class="g">6</td><td class="g">7</td></tr>
+                    <tr><td class="g h">3</td><td class="g h">5</td><td class="pm h"><div class="pm-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span class="ph">7</span><span class="ph">8</span><span></span></div></td><td class="g h">1</td><td class="pm h"><div class="pm-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span class="ph">7</span><span class="ph">8</span><span></span></div></td><td class="g h">6</td><td class="s">2</td><td class="g h">9</td><td class="g h">4</td></tr>
+                    <tr><td class="g">4</td><td class="g">2</td><td class="g">6</td><td class="g">8</td><td class="g">5</td><td class="g">3</td><td class="g">7</td><td class="g">9</td><td class="g">1</td></tr>
+                    <tr><td class="g">7</td><td class="g">1</td><td class="g">3</td><td class="g">9</td><td class="g">2</td><td class="g">4</td><td class="g">8</td><td class="g">5</td><td class="g">6</td></tr>
+                    <tr><td class="g">9</td><td class="g">6</td><td class="g">1</td><td class="g">5</td><td class="g">3</td><td class="g">7</td><td class="g">2</td><td class="g">8</td><td class="g">4</td></tr>
+                    <tr><td class="g">2</td><td class="g">8</td><td class="g">7</td><td class="g">4</td><td class="g">1</td><td class="g">9</td><td class="g">6</td><td class="g">3</td><td class="g">5</td></tr>
+                    <tr><td class="g">8</td><td class="g">4</td><td class="g">5</td><td class="g">2</td><td class="g">6</td><td class="g">8</td><td class="g">1</td><td class="g">7</td><td class="g">9</td></tr>
+                </table>
+                <p class="grid-caption">Row 4: R4C3 and R4C5 both have candidates {7, 8} &mdash; a naked pair. This forces R4C7 = 2 (green).</p>
+                </div>
+
+                <p>The same logic extends to naked triples, where three cells share a combined set of three candidates. Spotting these patterns lets you prune your pencil marks aggressively, often unlocking a chain of easy placements. This is one of the sudoku techniques that separates intermediate solvers from speed demons.</p>
 
                 <h3>
                     <span class="tip-number">6</span>
                     <span class="tip-title">Hidden Singles</span>
                 </h3>
 
-                <p>A hidden single is a candidate that appears only once within a particular row, column, or box, even though the cell it occupies may have multiple pencil marks. Because no other cell in that unit can hold that digit, the placement is guaranteed. Hidden singles are easy to overlook because the cell itself looks ambiguous, but the surrounding context makes the answer clear. Training yourself to spot hidden singles is one of the highest-value sudoku tips for intermediate players. In many puzzles, hidden singles account for the majority of placements beyond the initial scan, so mastering this technique will dramatically speed up your solving.</p>
+                <p>A hidden single is a candidate that appears only once within a particular row, column, or box, even though the cell it occupies may have multiple pencil marks. Because no other cell in that unit can hold that digit, the placement is guaranteed.</p>
+
+                <p>In the example below, look at Box 5 (the center 3&times;3 box). Several cells have pencil marks showing multiple candidates. The cell at R6C5 has candidates {2, 7}. But scan Box 5 for the digit 7 &mdash; no other cell in the box can contain 7. R4C4 has {1, 6}, R4C6 has {4, 6}, R5C5 has {1, 9}, and R6C4 has {1, 4}. The digit 7 can <em>only</em> go in R6C5. So despite having two candidates, <strong>R6C5 = 7</strong>.</p>
+
+                <div class="sudoku-example">
+                <table class="sudoku-grid">
+                    <tr><td class="g">5</td><td class="g">3</td><td class="g">4</td><td class="g">6</td><td class="g">7</td><td class="g">8</td><td class="g">9</td><td class="g">1</td><td class="g">2</td></tr>
+                    <tr><td class="g">6</td><td class="g">7</td><td class="g">2</td><td class="g">1</td><td class="g">9</td><td class="g">5</td><td class="g">3</td><td class="g">4</td><td class="g">8</td></tr>
+                    <tr><td class="g">1</td><td class="g">9</td><td class="g">8</td><td class="g">3</td><td class="g">4</td><td class="g">2</td><td class="g">5</td><td class="g">6</td><td class="g">7</td></tr>
+                    <tr><td class="g">8</td><td class="g">5</td><td class="g">9</td><td class="pm h"><div class="pm-grid"><span class="ph">1</span><span></span><span></span><span></span><span></span><span class="ph">6</span><span></span><span></span><span></span></div></td><td class="g h">6</td><td class="pm h"><div class="pm-grid"><span></span><span></span><span></span><span class="ph">4</span><span></span><span class="ph">6</span><span></span><span></span><span></span></div></td><td class="g">4</td><td class="g">2</td><td class="g">3</td></tr>
+                    <tr><td class="g">4</td><td class="g">2</td><td class="g">6</td><td class="g h">8</td><td class="pm h"><div class="pm-grid"><span class="ph">1</span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="ph">9</span></div></td><td class="g h">3</td><td class="g">7</td><td class="g">9</td><td class="g">1</td></tr>
+                    <tr><td class="g">7</td><td class="g">1</td><td class="g">3</td><td class="pm h"><div class="pm-grid"><span class="ph">1</span><span></span><span></span><span class="ph">4</span><span></span><span></span><span></span><span></span><span></span></div></td><td class="s"><div class="pm-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span class="sh">7</span><span></span><span></span></div></td><td class="g h">4</td><td class="g">8</td><td class="g">5</td><td class="g">6</td></tr>
+                    <tr><td class="g">9</td><td class="g">6</td><td class="g">1</td><td class="g">5</td><td class="g">3</td><td class="g">7</td><td class="g">2</td><td class="g">8</td><td class="g">4</td></tr>
+                    <tr><td class="g">2</td><td class="g">8</td><td class="g">7</td><td class="g">4</td><td class="g">1</td><td class="g">9</td><td class="g">6</td><td class="g">3</td><td class="g">5</td></tr>
+                    <tr><td class="g">3</td><td class="g">4</td><td class="g">5</td><td class="g">2</td><td class="g">8</td><td class="g">6</td><td class="g">1</td><td class="g">7</td><td class="g">9</td></tr>
+                </table>
+                <p class="grid-caption">Box 5 (center): Only R6C5 can contain the digit 7. It is a hidden single &mdash; R6C5 = 7 (green).</p>
+                </div>
+
+                <p>Training yourself to spot hidden singles is one of the highest-value sudoku tips for intermediate players. In many puzzles, hidden singles account for the majority of placements beyond the initial scan.</p>
 
                 <h3>
                     <span class="tip-number">7</span>
                     <span class="tip-title">Box/Line Reduction</span>
                 </h3>
 
-                <p>Box/line reduction applies when all possible positions for a number within a 3x3 box fall along a single row or column. Because that number must appear in the box, and it can only go in that one line, you can eliminate it as a candidate from every other cell in that row or column outside the box. The reverse also works: if a number in a row or column is confined to a single box, you can remove it from other cells within that box. This technique is subtle but incredibly powerful. It often sets up cascading eliminations that crack open stubborn sections of the grid, making it one of the essential advanced sudoku strategies to have in your toolkit.</p>
+                <p>Box/line reduction applies when all possible positions for a number within a 3&times;3 box fall along a single row or column. Because that number must appear in the box and can only go in that one line, you can eliminate it as a candidate from every other cell in that row or column <em>outside</em> the box.</p>
+
+                <p>In the example below, look at Box 1 (top-left 3&times;3). The digit 6 is missing from this box, and the only cells where it can go are R1C1 and R1C2 &mdash; both in Row 1. Since 6 <em>must</em> be somewhere in Row 1 within Box 1, we can eliminate 6 as a candidate from all other cells in Row 1 (in Box 2 and Box 3). This removes 6 from R1C5 and R1C8.</p>
+
+                <div class="sudoku-example">
+                <table class="sudoku-grid">
+                    <tr><td class="pm h"><div class="pm-grid"><span></span><span></span><span></span><span></span><span></span><span class="ph">6</span><span></span><span></span><span></span></div></td><td class="pm h"><div class="pm-grid"><span></span><span></span><span></span><span></span><span></span><span class="ph">6</span><span></span><span></span><span class="ph">9</span></div></td><td class="g h">7</td><td class="g">5</td><td class="pm el"><div class="pm-grid"><span></span><span></span><span class="x">3</span><span></span><span></span><span class="x">6</span><span></span><span></span><span></span></div></td><td class="g">4</td><td class="g">8</td><td class="pm el"><div class="pm-grid"><span class="x">1</span><span></span><span></span><span></span><span></span><span class="x">6</span><span></span><span></span><span></span></div></td><td class="g">3</td></tr>
+                    <tr><td class="g">5</td><td class="g">8</td><td class="g">3</td><td class="g">6</td><td class="g">1</td><td class="g">9</td><td class="g">2</td><td class="g">4</td><td class="g">7</td></tr>
+                    <tr><td class="g">4</td><td class="g">1</td><td class="g">2</td><td class="g">8</td><td class="g">7</td><td class="g">3</td><td class="g">5</td><td class="g">9</td><td class="g">6</td></tr>
+                    <tr><td class="g">8</td><td class="g">5</td><td class="g">9</td><td class="g">7</td><td class="g">6</td><td class="g">1</td><td class="g">4</td><td class="g">2</td><td class="g">3</td></tr>
+                    <tr><td class="g">3</td><td class="g">2</td><td class="g">6</td><td class="g">4</td><td class="g">5</td><td class="g">8</td><td class="g">7</td><td class="g">1</td><td class="g">9</td></tr>
+                    <tr><td class="g">7</td><td class="g">4</td><td class="g">1</td><td class="g">9</td><td class="g">2</td><td class="g">3</td><td class="g">6</td><td class="g">8</td><td class="g">5</td></tr>
+                    <tr><td class="g">9</td><td class="g">6</td><td class="g">8</td><td class="g">1</td><td class="g">3</td><td class="g">7</td><td class="g">2</td><td class="g">5</td><td class="g">4</td></tr>
+                    <tr><td class="g">2</td><td class="g">3</td><td class="g">4</td><td class="g">8</td><td class="g">9</td><td class="g">5</td><td class="g">1</td><td class="g">6</td><td class="g">7</td></tr>
+                    <tr><td class="g">1</td><td class="g">7</td><td class="g">5</td><td class="g">3</td><td class="g">4</td><td class="g">6</td><td class="g">9</td><td class="g">2</td><td class="g">8</td></tr>
+                </table>
+                <p class="grid-caption">Box 1: digit 6 can only go in R1C1 or R1C2 (purple). This eliminates 6 from R1C5 and R1C8 (red strikethrough).</p>
+                </div>
+
+                <p>The reverse also works: if a number in a row or column is confined to a single box, you can remove it from other cells within that box. This technique is subtle but incredibly powerful, often setting up cascading eliminations that crack open stubborn sections of the grid.</p>
 
                 <h3>
                     <span class="tip-number">8</span>
                     <span class="tip-title">X-Wing Pattern</span>
                 </h3>
 
-                <p>The X-Wing is a more advanced pattern that appears when a candidate exists in exactly two cells in each of two different rows, and those cells line up in the same two columns. This creates a rectangular formation where the digit must occupy two diagonally opposite corners. As a result, you can eliminate that candidate from all other cells in those two columns. The X-Wing may sound complicated, but once you learn to spot the rectangular shape, it becomes a reliable weapon against tough puzzles. It is one of the sudoku tricks that competitive solvers rely on when simpler methods stall, and it can instantly break open an otherwise deadlocked grid.</p>
+                <p>The X-Wing is a more advanced pattern that appears when a candidate exists in exactly two cells in each of two different rows, and those cells line up in the same two columns. This creates a rectangular formation, and the digit must occupy two diagonally opposite corners. As a result, you can eliminate that candidate from all other cells in those two columns.</p>
+
+                <p>In the example below, we are looking at the candidate <strong>4</strong>. In Row 2, the digit 4 can only go in Column 3 or Column 7 (marked in purple). In Row 7, the digit 4 can also only go in Column 3 or Column 7 (also purple). These four cells form a rectangle &mdash; the X-Wing. No matter which diagonal 4 occupies, Columns 3 and 7 are accounted for. So we can eliminate 4 from every other cell in Columns 3 and 7 (shown with red strikethrough).</p>
+
+                <div class="sudoku-example">
+                <table class="sudoku-grid">
+                    <tr><td class="g">5</td><td class="g">3</td><td class="g">8</td><td class="g">6</td><td class="g">7</td><td class="g">2</td><td class="g">9</td><td class="g">1</td><td class="g">4</td></tr>
+                    <tr><td class="g">6</td><td class="g">7</td><td class="pm h"><div class="pm-grid"><span></span><span></span><span></span><span class="ph">4</span><span></span><span></span><span></span><span></span><span class="ph">9</span></div></td><td class="g">1</td><td class="g">8</td><td class="g">5</td><td class="pm h"><div class="pm-grid"><span></span><span></span><span></span><span class="ph">4</span><span></span><span></span><span></span><span></span><span class="ph">9</span></div></td><td class="g">3</td><td class="g">2</td></tr>
+                    <tr><td class="g">1</td><td class="g">9</td><td class="g">2</td><td class="g">3</td><td class="g">4</td><td class="g">6</td><td class="g">5</td><td class="g">8</td><td class="g">7</td></tr>
+                    <tr><td class="g">8</td><td class="g">5</td><td class="pm el"><div class="pm-grid"><span></span><span></span><span></span><span class="x">4</span><span></span><span></span><span class="ph">7</span><span></span><span></span></div></td><td class="g">9</td><td class="g">6</td><td class="g">1</td><td class="g">3</td><td class="g">2</td><td class="g">4</td></tr>
+                    <tr><td class="g">4</td><td class="g">2</td><td class="g">6</td><td class="g">8</td><td class="g">5</td><td class="g">3</td><td class="g">7</td><td class="g">9</td><td class="g">1</td></tr>
+                    <tr><td class="g">7</td><td class="g">1</td><td class="g">3</td><td class="g">2</td><td class="g">9</td><td class="g">4</td><td class="g">8</td><td class="g">5</td><td class="g">6</td></tr>
+                    <tr><td class="g">9</td><td class="g">6</td><td class="pm h"><div class="pm-grid"><span></span><span></span><span></span><span class="ph">4</span><span class="ph">5</span><span></span><span></span><span></span><span></span></div></td><td class="g">7</td><td class="g">3</td><td class="g">8</td><td class="pm h"><div class="pm-grid"><span class="ph">1</span><span></span><span></span><span class="ph">4</span><span></span><span></span><span></span><span></span><span></span></div></td><td class="g">6</td><td class="g">5</td></tr>
+                    <tr><td class="g">2</td><td class="g">8</td><td class="g">5</td><td class="g">4</td><td class="g">1</td><td class="g">9</td><td class="g">6</td><td class="g">7</td><td class="g">3</td></tr>
+                    <tr><td class="g">3</td><td class="g">4</td><td class="pm el"><div class="pm-grid"><span class="ph">1</span><span></span><span></span><span class="x">4</span><span></span><span></span><span></span><span></span><span class="ph">9</span></div></td><td class="g">5</td><td class="g">2</td><td class="g">7</td><td class="g">8</td><td class="g">4</td><td class="g">9</td></tr>
+                </table>
+                <p class="grid-caption">X-Wing on digit 4: R2C3, R2C7, R7C3, R7C7 form a rectangle (purple). Eliminate 4 from other cells in Columns 3 and 7 (red strikethrough).</p>
+                </div>
+
+                <p>The X-Wing may sound complicated, but once you learn to spot the rectangular shape, it becomes a reliable weapon against tough puzzles. It is one of the sudoku tricks that competitive solvers rely on when simpler methods stall.</p>
 
                 <h2>Speed-Specific Tips for Competitive Sudoku</h2>
 
