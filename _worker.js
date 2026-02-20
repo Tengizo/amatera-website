@@ -14,7 +14,16 @@ export default {
       const rewritten = new URL(url);
       rewritten.pathname = prefix + url.pathname;
       const response = await env.ASSETS.fetch(new Request(rewritten, request));
-      if (response.status !== 404) return response;
+
+      // Pages serves HTML fallback for missing files. If we requested a
+      // non-HTML asset but got HTML back, the file doesn't exist in the
+      // subfolder — fall back to the root path (shared assets like /assets/).
+      const isAsset = /\.\w+$/.test(url.pathname) && !url.pathname.endsWith('.html');
+      if (isAsset && response.headers.get('content-type')?.includes('text/html')) {
+        return env.ASSETS.fetch(new Request(url, request));
+      }
+
+      return response;
     }
 
     return env.ASSETS.fetch(new Request(url, request));
