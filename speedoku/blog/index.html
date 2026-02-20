@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedoku Blog - Multiplayer Sudoku Tips, Strategies &amp; News</title>
+    <meta name="description" content="Explore Speedoku's blog for multiplayer sudoku tips, strategies, news, and guides. Learn how to improve your sudoku skills and compete with friends.">
+    <meta name="keywords" content="sudoku blog, multiplayer sudoku tips, sudoku strategies, competitive sudoku, sudoku guide">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Speedoku Blog - Multiplayer Sudoku Tips, Strategies & News">
+    <meta property="og:description" content="Explore Speedoku's blog for multiplayer sudoku tips, strategies, news, and guides. Learn how to improve your sudoku skills and compete with friends.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amatera.dev/speedoku/blog/">
+    <meta property="og:image" content="https://amatera.dev/speedoku/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Speedoku Blog - Multiplayer Sudoku Tips, Strategies & News">
+    <meta name="twitter:description" content="Explore Speedoku's blog for multiplayer sudoku tips, strategies, news, and guides. Learn how to improve your sudoku skills and compete with friends.">
+    <meta name="twitter:image" content="https://amatera.dev/speedoku/assets/og-image.png">
+    <link rel="canonical" href="https://amatera.dev/speedoku/blog/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/logo-fav.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-deep: #0D0515;
+            --bg-dark: #1A0A2E;
+            --bg-card: #251440;
+            --bg-card-hover: #2E1A4D;
+            --primary: #8B5CF6;
+            --primary-glow: #A78BFA;
+            --primary-dim: #6D28D9;
+            --accent: #D580FF;
+            --accent-secondary: #F472B6;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B4A5C7;
+            --text-muted: #7C6A94;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --gradient-hero: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-dark) 50%, #1E1145 100%);
+            --gradient-card: linear-gradient(145deg, var(--bg-card) 0%, rgba(37, 20, 64, 0.6) 100%);
+            --glow-primary: 0 0 60px rgba(139, 92, 246, 0.3);
+            --glow-accent: 0 0 40px rgba(213, 128, 255, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .floating-digit {
+            position: absolute;
+            font-size: 120px;
+            font-weight: 800;
+            color: rgba(139, 92, 246, 0.03);
+            animation: float 20s ease-in-out infinite;
+            user-select: none;
+        }
+
+        .floating-digit:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .floating-digit:nth-child(2) { top: 60%; left: 15%; animation-delay: -5s; }
+        .floating-digit:nth-child(3) { top: 30%; right: 10%; animation-delay: -10s; }
+        .floating-digit:nth-child(4) { top: 70%; right: 20%; animation-delay: -15s; }
+        .floating-digit:nth-child(5) { top: 20%; left: 40%; animation-delay: -7s; }
+        .floating-digit:nth-child(6) { top: 80%; left: 60%; animation-delay: -12s; }
+        .floating-digit:nth-child(7) { top: 45%; right: 35%; animation-delay: -3s; }
+        .floating-digit:nth-child(8) { top: 5%; right: 45%; animation-delay: -18s; }
+        .floating-digit:nth-child(9) { top: 90%; left: 35%; animation-delay: -8s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.03; }
+            50% { transform: translateY(-30px) rotate(5deg); opacity: 0.06; }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 0;
+            background: rgba(13, 5, 21, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: all 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-glow);
+            transform: translateY(-1px);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 140px 0 60px;
+            background: var(--gradient-hero);
+            position: relative;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, transparent, var(--bg-deep));
+            pointer-events: none;
+        }
+
+        .page-header h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-glow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header .subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 32px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-glow);
+        }
+
+        .breadcrumb .separator {
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .breadcrumb .current {
+            color: var(--text-secondary);
+        }
+
+        /* Blog Grid */
+        .blog-section {
+            padding: 40px 0 100px;
+            position: relative;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .blog-card {
+            background: var(--gradient-card);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 20px;
+            padding: 36px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            transform: translateY(-4px);
+            box-shadow: var(--glow-accent);
+        }
+
+        .blog-card-date {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blog-card-date svg {
+            width: 14px;
+            height: 14px;
+            color: var(--primary);
+        }
+
+        .blog-card h2 {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 14px;
+            letter-spacing: -0.3px;
+        }
+
+        .blog-card h2 a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .blog-card h2 a:hover {
+            color: var(--primary-glow);
+        }
+
+        .blog-card .excerpt {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+
+        .blog-card .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary-glow);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+
+        .blog-card .read-more:hover {
+            color: var(--accent);
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-deep);
+            border-top: 1px solid rgba(139, 92, 246, 0.1);
+            padding: 60px 0 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(139, 92, 246, 0.1);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .page-header h1 {
+                font-size: 42px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .page-header .subtitle {
+                font-size: 17px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://amatera.dev/"},
+        {"@type": "ListItem", "position": 2, "name": "Speedoku", "item": "https://amatera.dev/speedoku/"},
+        {"@type": "ListItem", "position": 3, "name": "Blog", "item": "https://amatera.dev/speedoku/blog/"}
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Background Pattern -->
+    <div class="bg-pattern">
+        <span class="floating-digit">1</span>
+        <span class="floating-digit">9</span>
+        <span class="floating-digit">4</span>
+        <span class="floating-digit">7</span>
+        <span class="floating-digit">2</span>
+        <span class="floating-digit">5</span>
+        <span class="floating-digit">8</span>
+        <span class="floating-digit">3</span>
+        <span class="floating-digit">6</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../" class="logo">
+                <img src="../assets/icon.png" alt="Speedoku" class="logo-img">
+                <span class="logo-text">Speed<span>oku</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="../">Features</a>
+                <a href="./">Blog</a>
+                <a href="../support/">Support</a>
+                <a href="/">Amatera</a>
+                <a href="../" class="nav-cta">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="separator">&gt;</span>
+                <a href="../">Speedoku</a>
+                <span class="separator">&gt;</span>
+                <span class="current">Blog</span>
+            </div>
+            <h1>Speedoku Blog</h1>
+            <p class="subtitle">Tips, strategies, and news about multiplayer sudoku</p>
+        </div>
+    </header>
+
+    <!-- Blog Articles -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+
+                <article class="blog-card">
+                    <div class="blog-card-date">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        February 20, 2026
+                    </div>
+                    <h2><a href="./multiplayer-sudoku-guide/">What Is Multiplayer Sudoku? The Complete Guide</a></h2>
+                    <p class="excerpt">Discover the exciting world of multiplayer sudoku — how it works, what makes it different from traditional sudoku, and why it's taking the puzzle world by storm.</p>
+                    <a href="./multiplayer-sudoku-guide/" class="read-more">Read More &rarr;</a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-date">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        February 20, 2026
+                    </div>
+                    <h2><a href="./play-sudoku-with-friends/">How to Play Sudoku with Friends Online in 2026</a></h2>
+                    <p class="excerpt">Learn how to set up multiplayer sudoku games with friends, from choosing the right app to picking difficulty levels that work for everyone.</p>
+                    <a href="./play-sudoku-with-friends/" class="read-more">Read More &rarr;</a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-date">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        February 20, 2026
+                    </div>
+                    <h2><a href="./sudoku-tips-and-strategies/">10 Sudoku Tips and Strategies to Solve Puzzles Faster</a></h2>
+                    <p class="excerpt">Master essential sudoku techniques from beginner scanning to advanced patterns like X-Wing. These strategies will help you solve puzzles faster in competitive play.</p>
+                    <a href="./sudoku-tips-and-strategies/" class="read-more">Read More &rarr;</a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-date">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        February 20, 2026
+                    </div>
+                    <h2><a href="./competitive-sudoku/">Competitive Sudoku: How Real-Time Battles Are Changing the Game</a></h2>
+                    <p class="excerpt">From paper championships to mobile battles — explore how competitive sudoku has evolved and what it takes to climb the rankings.</p>
+                    <a href="./competitive-sudoku/" class="read-more">Read More &rarr;</a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-date">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        February 20, 2026
+                    </div>
+                    <h2><a href="./best-multiplayer-sudoku-apps/">Best Multiplayer Sudoku Apps in 2026</a></h2>
+                    <p class="excerpt">A comparison of the top multiplayer sudoku apps available today, with features, pros and cons, and our top pick for competitive play.</p>
+                    <a href="./best-multiplayer-sudoku-apps/" class="read-more">Read More &rarr;</a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/icon.png" alt="Speedoku" class="logo-img">
+                    <span class="logo-text">Speed<span>oku</span></span>
+                </div>
+                <div class="footer-links">
+                    <a href="../privacy-policy/">Privacy Policy</a>
+                    <a href="../account-deletion/">Delete Account</a>
+                    <a href="../support/">Support</a>
+                    <a href="./">Blog</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Amatera LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
