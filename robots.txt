@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /alias/account-deletion/
+Disallow: /alias/privacy-policy/
+Disallow: /speedoku/account-deletion/
+Disallow: /speedoku/privacy-policy/
+
+Sitemap: https://amatera.dev/sitemap.xml
