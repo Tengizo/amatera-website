@@ -13,6 +13,13 @@ export default {
     if (prefix) {
       const rewritten = new URL(url);
       rewritten.pathname = prefix + url.pathname;
+
+      // Serve room/index.html for any /room/{roomId} deep link path
+      const roomMatch = url.pathname.match(/^\/room\/[A-Za-z0-9]+\/?$/);
+      if (roomMatch) {
+        rewritten.pathname = prefix + '/room/index.html';
+      }
+
       const response = await env.ASSETS.fetch(new Request(rewritten, request));
 
       // Pages serves HTML fallback for missing files. If we requested a
