@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.speedoku.speedoku",
+      "sha256_cert_fingerprints": [
+        "FF:20:28:39:71:36:16:11:E9:C4:30:7D:88:66:5B:23:0B:65:9D:4F:4C:7A:00:EC:C8:87:7E:84:55:EE:CA:A5",
+        "1C:B0:78:45:8C:AF:BD:D2:1E:23:C4:E3:58:46:C0:58:FB:98:44:4E:16:A8:FA:9F:31:B5:F3:38:95:A6:C4:B8"
+      ]
+    }
+  }
+]

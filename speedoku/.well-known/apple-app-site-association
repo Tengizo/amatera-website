@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "24233J8B8J.com.speedoku.speedoku",
+        "paths": ["/room/*"]
+      }
+    ]
+  }
+}
