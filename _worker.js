@@ -14,10 +14,17 @@ export default {
       const rewritten = new URL(url);
       rewritten.pathname = prefix + url.pathname;
 
-      // Serve room/index.html for any /room/{roomId} deep link path
+      // Serve room/index.html for any /room/{roomId} deep link path.
+      // Fetch the directory URL (not index.html) to avoid Pretty URLs 308 redirect.
       const roomMatch = url.pathname.match(/^\/room\/[A-Za-z0-9]+\/?$/);
       if (roomMatch) {
-        rewritten.pathname = prefix + '/room/index.html';
+        rewritten.pathname = prefix + '/room/';
+        const response = await env.ASSETS.fetch(new Request(rewritten, request));
+        // Return with original URL (don't expose internal /speedoku/ prefix)
+        return new Response(response.body, {
+          status: 200,
+          headers: response.headers,
+        });
       }
 
       const response = await env.ASSETS.fetch(new Request(rewritten, request));
