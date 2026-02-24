@@ -10,6 +10,10 @@
 # Firebase
 firebase-debug.log
 
+# Environment variables
+.env
+.env.*
+
 # macOS
 .DS_Store
 .vercel
