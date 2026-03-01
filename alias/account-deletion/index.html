@@ -53,8 +53,17 @@
             box-sizing: border-box;
         }
 
+        @font-face {
+            font-family: 'Inter Fallback';
+            src: local('Arial');
+            size-adjust: 107%;
+            ascent-override: 90%;
+            descent-override: 22%;
+            line-gap-override: 0%;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
             color: var(--text-light);
             line-height: 1.6;
