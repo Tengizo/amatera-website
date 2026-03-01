@@ -523,9 +523,59 @@
             }
         }
 
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 101;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary, #fff);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: rgba(13, 5, 21, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 24px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            z-index: 99;
+        }
+
+        .mobile-nav.active { display: block; }
+
+        .mobile-nav a {
+            display: block;
+            color: var(--text-secondary, #B4A5C7);
+            text-decoration: none;
+            padding: 16px 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav a:hover { color: var(--primary-glow, #A78BFA); }
+
         @media (max-width: 640px) {
             .nav-links {
                 display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
             }
 
             .page-header h1 {
@@ -563,6 +613,7 @@
                 justify-content: center;
             }
         }
+
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -629,8 +680,17 @@
                 <a href="/">Amatera</a>
                 <a href="../../" class="nav-cta">Download</a>
             </div>
+            <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('active')" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="../../">Speedoku</a>
+        <a href="../">Blog</a>
+        <a href="../../support/">Support</a>
+        <a href="/">Amatera</a>
+    </div>
 
     <!-- Page Header -->
     <header class="page-header">
