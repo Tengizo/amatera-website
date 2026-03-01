@@ -12,7 +12,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #6C5CE7;
+            color: #fff;
+            padding: 8px 16px;
+            z-index: 200;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0 0 8px 0;
+            transition: top 0.2s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
         :root {
             --primary: #f5a623;
             --primary-dark: #d4890f;
@@ -132,6 +151,7 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="header-content">
             <a href="/" class="logo-link">
@@ -144,7 +164,7 @@
         </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
         <div class="policy-header">
             <h1>Privacy Policy for Alias</h1>
             <p class="dates"><strong>Last Updated:</strong> February 9, 2026<br><strong>Effective Date:</strong> February 9, 2026</p>

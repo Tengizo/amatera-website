@@ -60,6 +60,26 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #8B5CF6;
+            color: #fff;
+            padding: 8px 16px;
+            z-index: 200;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0 0 8px 0;
+            transition: top 0.2s;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
 
         body {
@@ -653,6 +673,7 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Background Pattern -->
     <div class="bg-pattern">
         <span class="floating-digit">1</span>
@@ -692,6 +713,7 @@
         <a href="/">Amatera</a>
     </div>
 
+    <main id="main-content">
     <!-- Page Header -->
     <header class="page-header">
         <div class="container">
@@ -823,6 +845,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer>

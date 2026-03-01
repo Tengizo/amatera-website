@@ -36,6 +36,27 @@
             box-sizing: border-box;
         }
 
+        html { scroll-padding-top: 100px; }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #8B5CF6;
+            color: #fff;
+            padding: 8px 16px;
+            z-index: 200;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0 0 8px 0;
+            transition: top 0.2s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
         :root {
             --bg-deep: #0D0515;
             --bg-dark: #1A0A2E;
@@ -395,6 +416,7 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Background layers -->
     <div class="bg-grid"></div>
     <span class="floating-digit">9</span>
@@ -406,7 +428,7 @@
     <div class="glow-orb"></div>
 
     <!-- Content -->
-    <div class="invite-wrapper">
+    <div id="main-content" class="invite-wrapper">
         <a href="https://speedoku.amatera.dev/" class="logo">
             <img src="../assets/icon.png" alt="Speedoku" class="logo-img">
             <span class="logo-text">Speed<span>oku</span></span>

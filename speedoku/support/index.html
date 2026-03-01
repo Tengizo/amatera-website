@@ -10,6 +10,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-padding-top: 100px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #8B5CF6;
+            color: #fff;
+            padding: 8px 16px;
+            z-index: 200;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0 0 8px 0;
+            transition: top 0.2s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
         :root {
             --primary: #8B5CF6;
             --primary-dark: #7C3AED;
@@ -412,6 +435,7 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="container">
             <a href="../" class="logo">
@@ -427,7 +451,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <div class="container">
             <h1 class="page-title">Support</h1>
             <p class="page-subtitle">We're here to help! Check our FAQ or send us a message.</p>
