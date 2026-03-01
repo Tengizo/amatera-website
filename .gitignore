@@ -14,6 +14,9 @@ firebase-debug.log
 .env
 .env.*
 
+# Google service account credentials
+google-service-account.json
+
 # macOS
 .DS_Store
 .vercel
