@@ -37,6 +37,24 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://alias.amatera.dev/blog/best-party-games-for-groups/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alias.amatera.dev/blog/party-games-without-internet/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alias.amatera.dev/blog/alias-vs-taboo/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://alias.amatera.dev/support/</loc>
     <lastmod>2026-03-11</lastmod>
     <priority>0.3</priority>
