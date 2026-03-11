@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Party Mode Challenge Cards | Alias Word Game</title>
+    <meta name="description" content="Discover 25 hilarious challenge cards in Alias Party Mode. Explain words like a robot, whisper, sing, or stand on one leg. Create unlimited custom challenges!">
+    <meta name="keywords" content="alias party mode, party game challenges, alias challenge cards, fun party game rules">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="25 Party Mode Challenge Cards | Alias Word Game">
+    <meta property="og:description" content="Discover 25 hilarious challenge cards in Alias Party Mode. Explain words like a robot, whisper, sing, or stand on one leg. Create unlimited custom challenges!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alias.amatera.dev/party-mode/">
+    <meta property="og:image" content="https://alias.amatera.dev/assets/app_icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="25 Party Mode Challenge Cards | Alias Word Game">
+    <meta name="twitter:description" content="Discover 25 hilarious challenge cards in Alias Party Mode. Explain words like a robot, whisper, sing, or stand on one leg. Create unlimited custom challenges!">
+    <meta name="twitter:image" content="https://alias.amatera.dev/assets/app_icon.png">
+    <link rel="canonical" href="https://alias.amatera.dev/party-mode/">
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://amatera.dev/"},
+            {"@type": "ListItem", "position": 2, "name": "Alias", "item": "https://alias.amatera.dev/"},
+            {"@type": "ListItem", "position": 3, "name": "Party Mode", "item": "https://alias.amatera.dev/party-mode/"}
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="../assets/app_icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #5849c2;
+            --primary-light: #a29bfe;
+            --pink: #f472b6;
+            --pink-dim: rgba(244, 114, 182, 0.15);
+            --bg-dark: #1a1a2e;
+            --bg-darker: #0f0f1a;
+            --text-light: #ffffff;
+            --text-muted: #a0a0b0;
+        }
+
+        html {
+            scroll-padding-top: 100px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #6C5CE7;
+            color: #fff;
+            padding: 8px 16px;
+            z-index: 200;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0 0 8px 0;
+            transition: top 0.2s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Inter Fallback';
+            src: local('Arial');
+            size-adjust: 107%;
+            ascent-override: 90%;
+            descent-override: 22%;
+            line-gap-override: 0%;
+        }
+
+        body {
+            font-family: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(244, 114, 182, 0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(108, 92, 231, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 24px;
+            background: rgba(15, 15, 26, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 28px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-light);
+        }
+
+        nav a.active {
+            color: var(--pink);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 28px;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50px;
+            color: var(--text-light) !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+            color: var(--text-light) !important;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Nav Overlay */
+        .mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1050;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+        }
+
+        /* Mobile Nav Drawer */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background: var(--bg-darker);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1060;
+            flex-direction: column;
+            padding: 80px 32px 32px;
+            transition: right 0.3s ease;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--primary-light);
+        }
+
+        .mobile-nav a.active {
+            color: var(--pink);
+        }
+
+        .mobile-nav .mobile-nav-cta {
+            display: block;
+            margin-top: auto;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 12px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav .mobile-nav-cta:hover {
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 100px 24px 0;
+        }
+
+        .breadcrumb nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 0;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb nav a:hover {
+            color: var(--primary-light);
+        }
+
+        .breadcrumb-sep {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb-current {
+            color: var(--pink);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 40px 24px 80px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 720px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(244, 114, 182, 0.1);
+            border: 1px solid rgba(244, 114, 182, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--pink);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #f472b6, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        /* Challenges Section */
+        .challenges-section {
+            padding: 80px 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--text-light) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title--pink {
+            background: linear-gradient(135deg, #f472b6, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* Challenge Cards Grid */
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .challenge-card {
+            background: rgba(244, 114, 182, 0.08);
+            border: 1px solid rgba(244, 114, 182, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.25s ease;
+        }
+
+        .challenge-card:hover {
+            background: rgba(244, 114, 182, 0.14);
+            border-color: rgba(244, 114, 182, 0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(244, 114, 182, 0.12);
+        }
+
+        .challenge-emoji {
+            font-size: 2.5rem;
+            line-height: 1;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .challenge-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+
+        .challenge-rule {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Create Your Own Section */
+        .create-own {
+            padding: 80px 24px;
+            background: rgba(108, 92, 231, 0.03);
+        }
+
+        .create-own-box {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 36px 40px;
+            background: rgba(244, 114, 182, 0.06);
+            border: 1px solid rgba(244, 114, 182, 0.2);
+            border-radius: 20px;
+        }
+
+        .create-own-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .create-own-box h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #f472b6, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .create-own-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .create-own-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .create-own-features li .feature-dot {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .create-own-features li .feature-dot::after {
+            content: '';
+            width: 7px;
+            height: 7px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* How Party Mode Works */
+        .how-it-works {
+            padding: 80px 24px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin: 0 auto 16px;
+            box-shadow: 0 4px 20px rgba(244, 114, 182, 0.3);
+        }
+
+        .step h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .step p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 24px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 36px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--pink), var(--primary));
+            border-radius: 50px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(244, 114, 182, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(244, 114, 182, 0.4);
+        }
+
+        .cta-button--secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
+
+        .cta-button--secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(244, 114, 182, 0.4);
+            box-shadow: 0 10px 30px rgba(244, 114, 182, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .challenges-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-nav-overlay {
+                display: block;
+                pointer-events: none;
+            }
+
+            .mobile-nav-overlay.active {
+                pointer-events: auto;
+            }
+
+            .mobile-nav {
+                display: flex;
+            }
+
+            .breadcrumb {
+                padding-top: 88px;
+            }
+
+            .challenges-section,
+            .create-own,
+            .how-it-works,
+            .cta-section {
+                padding: 60px 24px;
+            }
+
+            .create-own-box {
+                padding: 28px 24px;
+            }
+
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .challenges-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="container">
+            <a href="/" class="logo">Amatera<span>.</span></a>
+            <nav aria-label="Main navigation">
+                <a href="../">Home</a>
+                <a href="../languages/">Languages</a>
+                <a href="../word-packs/">Word Packs</a>
+                <a href="../party-mode/" class="active" aria-current="page">Party Mode</a>
+                <a href="../blog/">Blog</a>
+                <a href="../support/">Support</a>
+                <a href="https://apps.apple.com/us/app/alias-word-clash/id6758993027" class="nav-cta">Download</a>
+            </nav>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav()"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="../" onclick="toggleMobileNav()">Home</a>
+        <a href="../languages/" onclick="toggleMobileNav()">Languages</a>
+        <a href="../word-packs/" onclick="toggleMobileNav()">Word Packs</a>
+        <a href="../party-mode/" class="active" onclick="toggleMobileNav()">Party Mode</a>
+        <a href="../blog/" onclick="toggleMobileNav()">Blog</a>
+        <a href="../support/" onclick="toggleMobileNav()">Support</a>
+        <a href="https://apps.apple.com/us/app/alias-word-clash/id6758993027" class="mobile-nav-cta">Download App</a>
+    </div>
+
+    <main id="main-content">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <nav aria-label="Breadcrumb">
+                    <a href="https://amatera.dev/">Home</a>
+                    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+                    <a href="https://alias.amatera.dev/">Alias</a>
+                    <span class="breadcrumb-sep" aria-hidden="true">/</span>
+                    <span class="breadcrumb-current" aria-current="page">Party Mode</span>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span aria-hidden="true">&#127881;</span> Fan Favorite Mode
+                </div>
+                <h1>25 Hilarious Challenge Cards</h1>
+                <p class="hero-subtitle">Explain like a robot. Whisper. Sing. Stand on one leg. Create your own! Party Mode turns every round into an unforgettable moment.</p>
+            </div>
+        </section>
+
+        <!-- All 25 Challenge Cards -->
+        <section class="challenges-section" id="challenges">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title section-title--pink">All 25 Challenge Cards</h2>
+                    <p class="section-subtitle">A random challenge appears each round — you never know what's coming next.</p>
+                </div>
+
+                <div class="challenges-grid" role="list" aria-label="Party Mode challenge cards">
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">3️⃣</span>
+                        <div class="challenge-name">Three Words Only</div>
+                        <div class="challenge-rule">Explain using only 3 words per description</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">😑</span>
+                        <div class="challenge-name">Eyes Closed</div>
+                        <div class="challenge-rule">Explain with your eyes closed</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">❓</span>
+                        <div class="challenge-name">Questions Only</div>
+                        <div class="challenge-rule">Explain using only questions</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🤫</span>
+                        <div class="challenge-name">Whisper</div>
+                        <div class="challenge-rule">Explain by whispering</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🦩</span>
+                        <div class="challenge-name">One Leg</div>
+                        <div class="challenge-rule">Stand on one leg while explaining</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🔄</span>
+                        <div class="challenge-name">Antonyms Only</div>
+                        <div class="challenge-rule">Explain using antonyms</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🐢</span>
+                        <div class="challenge-name">Slow Motion</div>
+                        <div class="challenge-rule">Explain everything in slow motion</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🎭</span>
+                        <div class="challenge-name">Funny Accent</div>
+                        <div class="challenge-rule">Use a funny accent</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🤚</span>
+                        <div class="challenge-name">One Hand</div>
+                        <div class="challenge-rule">Only use one hand</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🎤</span>
+                        <div class="challenge-name">Sing It</div>
+                        <div class="challenge-rule">Sing your explanations</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🤖</span>
+                        <div class="challenge-name">Robot</div>
+                        <div class="challenge-rule">Talk like a robot</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">⏪</span>
+                        <div class="challenge-name">Backwards</div>
+                        <div class="challenge-rule">Say each word backwards</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🙅</span>
+                        <div class="challenge-name">No Hands</div>
+                        <div class="challenge-rule">No hand gestures allowed</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">👶</span>
+                        <div class="challenge-name">Baby Talk</div>
+                        <div class="challenge-rule">Explain like a baby</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🎵</span>
+                        <div class="challenge-name">Opera</div>
+                        <div class="challenge-rule">Use an opera singing voice</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🥶</span>
+                        <div class="challenge-name">Freeze</div>
+                        <div class="challenge-rule">Freeze for 3 seconds between words</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🦸</span>
+                        <div class="challenge-name">Superhero</div>
+                        <div class="challenge-rule">Explain like a superhero</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🏴‍☠️</span>
+                        <div class="challenge-name">Pirate</div>
+                        <div class="challenge-rule">Talk like a pirate</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">✌️</span>
+                        <div class="challenge-name">Two Words</div>
+                        <div class="challenge-rule">Only 2 words per description</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🎶</span>
+                        <div class="challenge-name">Rhyme</div>
+                        <div class="challenge-rule">Every explanation must rhyme</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">😂</span>
+                        <div class="challenge-name">Laughing</div>
+                        <div class="challenge-rule">Laugh non-stop while explaining</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🪞</span>
+                        <div class="challenge-name">Mirror</div>
+                        <div class="challenge-rule">Team mirrors your gestures</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🌟</span>
+                        <div class="challenge-name">Celebrity</div>
+                        <div class="challenge-rule">Impersonate a famous person</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">🔙</span>
+                        <div class="challenge-name">Back Turned</div>
+                        <div class="challenge-rule">Explain with your back to the team</div>
+                    </div>
+
+                    <div class="challenge-card" role="listitem">
+                        <span class="challenge-emoji" aria-hidden="true">👅</span>
+                        <div class="challenge-name">Tongue Out</div>
+                        <div class="challenge-rule">Explain with tongue sticking out</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Create Your Own -->
+        <section class="create-own" id="create-your-own">
+            <div class="container">
+                <div class="create-own-box">
+                    <div class="create-own-icon" aria-hidden="true">✨</div>
+                    <h2>Create Your Own Challenges</h2>
+                    <p style="color: var(--text-muted); line-height: 1.7;">The 25 built-in cards are just the beginning. Design unlimited custom challenges with your own emoji icons and rules — perfect for inside jokes, themed nights, or house rules.</p>
+                    <ul class="create-own-features" aria-label="Custom challenge features">
+                        <li>
+                            <span class="feature-dot" aria-hidden="true"></span>
+                            <span>Unlimited custom challenges — add as many as you want with any emoji and rule you can dream up</span>
+                        </li>
+                        <li>
+                            <span class="feature-dot" aria-hidden="true"></span>
+                            <span>Configurable frequency — set how often challenges appear (every 1, 2, 3, 4, or 5 rounds)</span>
+                        </li>
+                        <li>
+                            <span class="feature-dot" aria-hidden="true"></span>
+                            <span>Toggle on/off — individually enable or disable any challenge, built-in or custom</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Party Mode Works -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">How Party Mode Works</h2>
+                    <p class="section-subtitle">Same great gameplay, with one delightful twist each round.</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">1</div>
+                        <h3>Start a Party Mode Game</h3>
+                        <p>Select Party Mode when setting up your game. All your enabled challenge cards are loaded automatically.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">2</div>
+                        <h3>A Challenge Card Appears</h3>
+                        <p>At the start of each round, a random challenge card is drawn. Everyone sees the rule — the explaining player must follow it.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">3</div>
+                        <h3>Follow the Challenge</h3>
+                        <p>Describe as many words as you can within the time limit — while sticking to the challenge. Chaos, laughter, and glory await.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready for the Challenge?</h2>
+                <p>Download Alias free and unleash Party Mode at your next game night.</p>
+                <div class="cta-buttons">
+                    <a href="https://apps.apple.com/us/app/alias-word-clash/id6758993027" class="cta-button">
+                        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                        </svg>
+                        Download on App Store
+                    </a>
+                    <a href="../" class="cta-button cta-button--secondary">
+                        Explore Alias
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="../languages/">Languages</a>
+                <a href="../word-packs/">Word Packs</a>
+                <a href="../party-mode/">Party Mode</a>
+                <a href="../blog/">Blog</a>
+                <a href="../privacy-policy/">Privacy Policy</a>
+                <a href="../support/">Support</a>
+                <a href="../account-deletion/">Account Deletion</a>
+                <a href="https://amatera.dev/">Amatera</a>
+            </div>
+            <p class="copyright">&copy; 2026 Amatera LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileNav() {
+            var hamburger = document.querySelector('.hamburger');
+            var overlay = document.getElementById('mobileNavOverlay');
+            var nav = document.getElementById('mobileNav');
+            var isOpen = nav.classList.contains('active');
+
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            nav.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', !isOpen);
+            document.body.style.overflow = isOpen ? '' : 'hidden';
+        }
+    </script>
+</body>
+</html>
