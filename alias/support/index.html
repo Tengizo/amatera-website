@@ -8,17 +8,113 @@
     <meta property="og:title" content="Support | Alias - Word Clash">
     <meta property="og:description" content="Get help with Alias - Word Clash. Contact our support team for any questions or issues.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://amatera.dev/alias/support/">
-    <meta property="og:image" content="https://amatera.dev/assets/logo.png">
+    <meta property="og:url" content="https://alias.amatera.dev/support/">
+    <meta property="og:image" content="https://alias.amatera.dev/assets/app_icon.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Support | Alias - Word Clash">
     <meta name="twitter:description" content="Get help with Alias - Word Clash. Contact our support team for any questions or issues.">
-    <meta name="twitter:image" content="https://amatera.dev/assets/logo.png">
-    <link rel="canonical" href="https://amatera.dev/alias/support/">
+    <meta name="twitter:image" content="https://alias.amatera.dev/assets/app_icon.png">
+    <link rel="canonical" href="https://alias.amatera.dev/support/">
     <link rel="icon" type="image/png" href="../assets/app_icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I start a new game?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "From the home screen, tap \"New Game\". Choose your game mode (Classic or Party), create teams, select word packs, and set your preferred round time and win condition. Then just tap \"Start Game\"!"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I play offline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Alias works completely offline once you've downloaded word packs. Perfect for road trips, camping, or anywhere without internet."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many teams can play?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can create as many teams as you want - there's no upper limit. The game works great with 2 teams, but we've seen epic matches with 5+ teams!"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are Challenge Cards in Party Mode?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Challenge Cards add fun twists to how you describe words. You might have to explain with your eyes closed, use only 3 words, speak in questions, or even stand on one leg. A new challenge appears each round!"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the Contest feature work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "After each round, you can tap any skipped word to contest it. Teams vote on whether the skip was fair. If the majority agrees the word was valid, the point is awarded. It's democracy in action!"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What languages are available?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Alias comes with 16 languages bundled: English, Russian, Finnish, Polish, Czech, Slovak, Swedish, German, Danish, Norwegian, Ukrainian, Estonian, Latvian, Lithuanian, Georgian, and Armenian. All languages work offline — no internet required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I mix languages in one game?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! You can select multiple language packs for a single game. A round-robin algorithm ensures balanced word distribution across all selected languages. Perfect for multilingual groups."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do word packs work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Alias includes 6 categories of word packs: General, Movies & TV, Football, Geography, History, and Kids. Each has different difficulty levels (Easy, Medium, Hard). New packs are added regularly and download automatically — no app update needed."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I request a new word pack?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! Visit our Request a Word Pack page to suggest new languages or categories. We review all suggestions and prioritize based on demand."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://amatera.dev/"},
+            {"@type": "ListItem", "position": 2, "name": "Alias", "item": "https://alias.amatera.dev/"},
+            {"@type": "ListItem", "position": 3, "name": "Support", "item": "https://alias.amatera.dev/support/"}
+        ]
+    }
+    </script>
+
     <style>
         html {
             scroll-padding-top: 100px;
@@ -128,23 +224,154 @@
             color: var(--primary);
         }
 
-        .back-link {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
+        nav {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 0;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 32px;
+            font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        .back-link:hover {
+        nav a:hover {
             color: var(--primary);
         }
 
-        .back-link svg {
-            width: 20px;
-            height: 20px;
+        nav a[aria-current="page"] {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 32px;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50px;
+            color: var(--text-light) !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+            color: var(--text-light) !important;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Nav Overlay */
+        .mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1050;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+        }
+
+        /* Mobile Nav Drawer */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background: var(--bg-darker);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1060;
+            flex-direction: column;
+            padding: 80px 32px 32px;
+            transition: right 0.3s ease;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-nav .mobile-nav-cta {
+            display: block;
+            margin-top: auto;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 12px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav .mobile-nav-cta:hover {
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
         }
 
         /* Main Content */
@@ -187,26 +414,68 @@
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 16px;
-            transition: all 0.3s ease;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
         }
 
         .faq-item:hover {
             border-color: rgba(108, 92, 231, 0.2);
         }
 
-        .faq-item h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--text-light);
+        .faq-item.open {
+            border-color: rgba(108, 92, 231, 0.3);
         }
 
-        .faq-item p {
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            cursor: pointer;
+            user-select: none;
+            gap: 16px;
+        }
+
+        .faq-question h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-chevron {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 20px;
+        }
+
+        .faq-answer-inner p {
             color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
         }
 
         /* Contact Form */
@@ -422,6 +691,27 @@
 
         /* Mobile */
         @media (max-width: 768px) {
+            header nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-nav-overlay {
+                display: block;
+                pointer-events: none;
+            }
+
+            .mobile-nav-overlay.active {
+                pointer-events: auto;
+            }
+
+            .mobile-nav {
+                display: flex;
+            }
+
             main {
                 padding: 120px 24px 60px;
             }
@@ -446,14 +736,34 @@
     <header>
         <div class="container">
             <a href="/" class="logo">Amatera<span>.</span></a>
-            <a href="../" class="back-link">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                Back to Alias
-            </a>
+            <nav>
+                <a href="../">Home</a>
+                <a href="../languages/">Languages</a>
+                <a href="../word-packs/">Word Packs</a>
+                <a href="../party-mode/">Party Mode</a>
+                <a href="../blog/">Blog</a>
+                <a href="." aria-current="page">Support</a>
+                <a href="https://apps.apple.com/us/app/alias-word-clash/id6758993027" class="nav-cta">Download</a>
+            </nav>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav()"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="../" onclick="toggleMobileNav()">Home</a>
+        <a href="../languages/" onclick="toggleMobileNav()">Languages</a>
+        <a href="../word-packs/" onclick="toggleMobileNav()">Word Packs</a>
+        <a href="../party-mode/" onclick="toggleMobileNav()">Party Mode</a>
+        <a href="../blog/" onclick="toggleMobileNav()">Blog</a>
+        <a href="." onclick="toggleMobileNav()">Support</a>
+        <a href="https://apps.apple.com/us/app/alias-word-clash/id6758993027" class="mobile-nav-cta">Download App</a>
+    </div>
 
     <main id="main-content">
         <div class="container">
@@ -464,29 +774,131 @@
                 <h2>Frequently Asked Questions</h2>
 
                 <div class="faq-item">
-                    <h3>How do I start a new game?</h3>
-                    <p>From the home screen, tap "New Game". Choose your game mode (Classic or Party), create teams, select word packs, and set your preferred round time and win condition. Then just tap "Start Game"!</p>
+                    <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+                        <h3>How do I start a new game?</h3>
+                        <svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>From the home screen, tap "New Game". Choose your game mode (Classic or Party), create teams, select word packs, and set your preferred round time and win condition. Then just tap "Start Game"!</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <h3>Can I play offline?</h3>
-                    <p>Yes! Alias works completely offline once you've downloaded word packs. Perfect for road trips, camping, or anywhere without internet.</p>
+                    <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+                        <h3>Can I play offline?</h3>
+                        <svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes! Alias works completely offline once you've downloaded word packs. Perfect for road trips, camping, or anywhere without internet.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <h3>How many teams can play?</h3>
-                    <p>You can create as many teams as you want - there's no upper limit. The game works great with 2 teams, but we've seen epic matches with 5+ teams!</p>
+                    <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+                        <h3>How many teams can play?</h3>
+                        <svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>You can create as many teams as you want - there's no upper limit. The game works great with 2 teams, but we've seen epic matches with 5+ teams!</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <h3>What are Challenge Cards in Party Mode?</h3>
-                    <p>Challenge Cards add fun twists to how you describe words. You might have to explain with your eyes closed, use only 3 words, speak in questions, or even stand on one leg. A new challenge appears each round!</p>
+                    <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+                        <h3>What are Challenge Cards in Party Mode?</h3>
+                        <svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Challenge Cards add fun twists to how you describe words. You might have to explain with your eyes closed, use only 3 words, speak in questions, or even stand on one leg. A new challenge appears each round!</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="faq-item">
-                    <h3>How does the Contest feature work?</h3>
-                    <p>After each round, you can tap any skipped word to contest it. Teams vote on whether the skip was fair. If the majority agrees the word was valid, the point is awarded. It's democracy in action!</p>
+                    <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+                        <h3>How does the Contest feature work?</h3>
+                        <svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>After each round, you can tap any skipped word to contest it. Teams vote on whether the skip was fair. If the majority agrees the word was valid, the point is awarded. It's democracy in action!</p>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+                        <h3>What languages are available?</h3>
+                        <svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Alias comes with 16 languages bundled: English, Russian, Finnish, Polish, Czech, Slovak, Swedish, German, Danish, Norwegian, Ukrainian, Estonian, Latvian, Lithuanian, Georgian, and Armenian. All languages work offline — no internet required.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+                        <h3>Can I mix languages in one game?</h3>
+                        <svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes! You can select multiple language packs for a single game. A round-robin algorithm ensures balanced word distribution across all selected languages. Perfect for multilingual groups.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+                        <h3>How do word packs work?</h3>
+                        <svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Alias includes 6 categories of word packs: General, Movies &amp; TV, Football, Geography, History, and Kids. Each has different difficulty levels (Easy, Medium, Hard). New packs are added regularly and download automatically — no app update needed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
+                        <h3>Can I request a new word pack?</h3>
+                        <svg class="faq-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Absolutely! Visit our Request a Word Pack page to suggest new languages or categories. We review all suggestions and prioritize based on demand.</p>
+                        </div>
+                    </div>
+                </div>
+
             </section>
 
             <section class="contact-section" id="contact-form">
@@ -495,7 +907,7 @@
 
                 <form action="https://formsubmit.co/contact@amatera.dev" method="POST" id="supportForm">
                     <input type="hidden" name="_subject" value="Alias Support Request">
-                    <input type="hidden" name="_next" value="https://amatera.dev/alias/support/?success=true">
+                    <input type="hidden" name="_next" value="https://alias.amatera.dev/support/?success=true">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="text" name="_honey" style="display:none">
 
@@ -537,8 +949,12 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="../privacy-policy/">Privacy Policy</a>
                 <a href="../">Alias</a>
+                <a href="../languages/">Languages</a>
+                <a href="../word-packs/">Word Packs</a>
+                <a href="../party-mode/">Party Mode</a>
+                <a href="../blog/">Blog</a>
+                <a href="../privacy-policy/">Privacy Policy</a>
                 <a href="/">Amatera</a>
             </div>
             <p class="copyright">&copy; 2026 Amatera LLC. All rights reserved.</p>
@@ -546,6 +962,40 @@
     </footer>
 
     <script>
+        // Mobile nav toggle
+        function toggleMobileNav() {
+            var hamburger = document.querySelector('.hamburger');
+            var overlay = document.getElementById('mobileNavOverlay');
+            var nav = document.getElementById('mobileNav');
+            var isOpen = nav.classList.contains('active');
+
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            nav.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', !isOpen);
+            document.body.style.overflow = isOpen ? '' : 'hidden';
+        }
+
+        // FAQ accordion
+        function toggleFaq(questionEl) {
+            var item = questionEl.closest('.faq-item');
+            var answer = item.querySelector('.faq-answer');
+            var isOpen = item.classList.contains('open');
+
+            item.classList.toggle('open');
+            questionEl.setAttribute('aria-expanded', !isOpen);
+        }
+
+        // Keyboard support for FAQ items
+        document.querySelectorAll('.faq-question').forEach(function(el) {
+            el.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleFaq(el);
+                }
+            });
+        });
+
         // Check for success parameter
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('success') === 'true') {
