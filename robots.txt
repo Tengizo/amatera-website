@@ -2,8 +2,10 @@ User-agent: *
 Allow: /
 Disallow: /alias/account-deletion/
 Disallow: /alias/privacy-policy/
+Disallow: /alias/request-word-pack/
 Disallow: /speedoku/account-deletion/
 Disallow: /speedoku/privacy-policy/
 
 Sitemap: https://amatera.dev/sitemap.xml
 Sitemap: https://speedoku.amatera.dev/sitemap.xml
+Sitemap: https://alias.amatera.dev/sitemap.xml
