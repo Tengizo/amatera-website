@@ -133,14 +133,22 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
             text-decoration: none;
         }
 
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
         .logo span {
-            color: var(--primary);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-light);
         }
 
         nav {
@@ -703,7 +711,7 @@
 
     <header>
         <div class="container">
-            <a href="https://amatera.dev/" class="logo">Amatera<span>.</span></a>
+            <a href="https://alias.amatera.dev/" class="logo"><img src="../assets/app_icon.png" alt="Alias icon" width="32" height="32"><span>Alias — Word Clash</span></a>
             <nav aria-label="Main navigation">
                 <a href="../">Home</a>
                 <a href="./" class="nav-active" aria-current="page">Languages</a>

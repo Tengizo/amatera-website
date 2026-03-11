@@ -111,14 +111,22 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
             text-decoration: none;
         }
 
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
         .logo span {
-            color: var(--primary);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-light);
         }
 
         .back-link {
@@ -502,7 +510,7 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="container">
-            <a href="/" class="logo">Amatera<span>.</span></a>
+            <a href="https://alias.amatera.dev/" class="logo"><img src="../assets/app_icon.png" alt="Alias icon" width="32" height="32"><span>Alias — Word Clash</span></a>
             <a href="../" class="back-link">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
